@@ -1,0 +1,14 @@
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\bin\Debug\UtilitarioSuporte.exe.config
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\bin\Debug\UtilitarioSuporte.exe
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\bin\Debug\UtilitarioSuporte.pdb
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\bin\Debug\FontAwesome.Sharp.dll
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.csproj.AssemblyReference.cache
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.csproj.SuggestedBindingRedirects.cache
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.FormMenuPrincipal.resources
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.Properties.Resources.resources
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.csproj.GenerateResource.cache
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.csproj.CoreCompileInputs.cache
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.csproj.CopyComplete
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.exe
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.pdb
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.FormExtrairXml.resources
