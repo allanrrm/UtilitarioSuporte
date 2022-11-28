@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using UtilitarioSuporte.Forms;
 
 namespace UtilitarioSuporte
 {
@@ -20,6 +21,12 @@ namespace UtilitarioSuporte
         public FormMenuPrincipal()
         {
             InitializeComponent();
+            DesignCustomizado();
+        }
+
+        private void DesignCustomizado()
+        {
+            panelSubMenuXml.Visible = false;
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
@@ -28,7 +35,30 @@ namespace UtilitarioSuporte
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.MinimumSize = new Size(1366, 768);
         }
+
+        private void EsconderSubMenu()
+        {
+            if(panelSubMenuXml.Visible = true)
+            {
+                panelSubMenuXml.Visible = false;
+            }
+        }
+
+        private void MostrarSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                EsconderSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible = false;
+        }
+
+
+
 
         private struct RGBColors
         {
@@ -47,7 +77,7 @@ namespace UtilitarioSuporte
             {
                 DisabeButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.BackColor = Color.FromArgb(240,240,240);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -69,7 +99,7 @@ namespace UtilitarioSuporte
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(31, 30, 68);
+                currentBtn.BackColor = Color.FromArgb(31,31,31) ;
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
@@ -99,18 +129,35 @@ namespace UtilitarioSuporte
 
         private void btnXml_Click(object sender, EventArgs e)
         {
+
+            lblTitleChildForm.Text = "XML";
             ActivateButton(sender, RGBColors.color4);
-            OpenChildForm(new FormExtrairXml());
+            MostrarSubMenu(panelSubMenuXml);
+            //OpenChildForm(new FormExtrairXml());
+        }
+
+        private void btnEntrada_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormDadosXml(0));
         }
 
         private void btnRecuperarBase_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color2);
+            EsconderSubMenu();
+            ActivateButton(sender, RGBColors.color2);           
         }
 
         private void btnExterno_Click(object sender, EventArgs e)
         {
+            EsconderSubMenu();
             ActivateButton(sender, RGBColors.color3);
+        }
+
+        private void btnConexao_Click(object sender, EventArgs e)
+        {
+            EsconderSubMenu();
+            ActivateButton(sender, RGBColors.color6);
+            OpenChildForm(new FormConexao());
         }
 
 
@@ -119,7 +166,7 @@ namespace UtilitarioSuporte
             DisabeButton();
             leftBorderBtn.Visible = false;
             iconCurrentChildForm.IconChar = IconChar.Home;
-            iconCurrentChildForm.IconColor = Color.MediumPurple;
+            iconCurrentChildForm.IconColor = Color.Gainsboro;
             lblTitleChildForm.Text = "Iniciar";
         }
 
@@ -143,11 +190,6 @@ namespace UtilitarioSuporte
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnMaximize_Click(object sender, EventArgs e)
         {
             if(WindowState == FormWindowState.Normal)
@@ -160,5 +202,24 @@ namespace UtilitarioSuporte
         {
             WindowState = FormWindowState.Minimized;
         }
+
+
+        private void btnFechar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnFechar.BackColor = Color.Red;
+
+        }
+
+        private void btnFechar_MouseLeave(object sender, EventArgs e)
+        {
+            btnFechar.BackColor= Color.FromArgb(31, 31, 31);
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
     }
 }
