@@ -57,7 +57,7 @@
             // panelMenu
             // 
             this.panelMenu.AutoScroll = true;
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(58)))), ((int)(((byte)(76)))));
             this.panelMenu.Controls.Add(this.btnFechar);
             this.panelMenu.Controls.Add(this.btnConexao);
             this.panelMenu.Controls.Add(this.btnExterno);
@@ -69,7 +69,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(180, 578);
+            this.panelMenu.Size = new System.Drawing.Size(180, 761);
             this.panelMenu.TabIndex = 1;
             // 
             // btnFechar
@@ -83,7 +83,7 @@
             this.btnFechar.IconColor = System.Drawing.Color.Gainsboro;
             this.btnFechar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnFechar.IconSize = 32;
-            this.btnFechar.Location = new System.Drawing.Point(0, 533);
+            this.btnFechar.Location = new System.Drawing.Point(0, 716);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(180, 45);
             this.btnFechar.TabIndex = 5;
@@ -105,7 +105,7 @@
             this.btnConexao.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConexao.IconSize = 32;
             this.btnConexao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConexao.Location = new System.Drawing.Point(0, 424);
+            this.btnConexao.Location = new System.Drawing.Point(0, 418);
             this.btnConexao.Name = "btnConexao";
             this.btnConexao.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnConexao.Size = new System.Drawing.Size(180, 60);
@@ -127,7 +127,7 @@
             this.btnExterno.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExterno.IconSize = 32;
             this.btnExterno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExterno.Location = new System.Drawing.Point(0, 364);
+            this.btnExterno.Location = new System.Drawing.Point(0, 358);
             this.btnExterno.Name = "btnExterno";
             this.btnExterno.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnExterno.Size = new System.Drawing.Size(180, 60);
@@ -149,7 +149,7 @@
             this.btnRestaurar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRestaurar.IconSize = 32;
             this.btnRestaurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRestaurar.Location = new System.Drawing.Point(0, 304);
+            this.btnRestaurar.Location = new System.Drawing.Point(0, 298);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnRestaurar.Size = new System.Drawing.Size(180, 60);
@@ -162,18 +162,19 @@
             // 
             // panelSubMenuXml
             // 
-            this.panelSubMenuXml.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelSubMenuXml.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(65)))), ((int)(((byte)(84)))));
             this.panelSubMenuXml.Controls.Add(this.btnNFCe);
             this.panelSubMenuXml.Controls.Add(this.btnSaida);
             this.panelSubMenuXml.Controls.Add(this.btnEntrada);
             this.panelSubMenuXml.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuXml.Location = new System.Drawing.Point(0, 180);
             this.panelSubMenuXml.Name = "panelSubMenuXml";
-            this.panelSubMenuXml.Size = new System.Drawing.Size(180, 124);
+            this.panelSubMenuXml.Size = new System.Drawing.Size(180, 118);
             this.panelSubMenuXml.TabIndex = 4;
             // 
             // btnNFCe
             // 
+            this.btnNFCe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(65)))), ((int)(((byte)(84)))));
             this.btnNFCe.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNFCe.FlatAppearance.BorderSize = 0;
             this.btnNFCe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -189,10 +190,12 @@
             this.btnNFCe.Text = "NFC-e";
             this.btnNFCe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNFCe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNFCe.UseVisualStyleBackColor = true;
+            this.btnNFCe.UseVisualStyleBackColor = false;
+            this.btnNFCe.Click += new System.EventHandler(this.btnNFCe_Click);
             // 
             // btnSaida
             // 
+            this.btnSaida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(65)))), ((int)(((byte)(84)))));
             this.btnSaida.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSaida.FlatAppearance.BorderSize = 0;
             this.btnSaida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -209,10 +212,12 @@
             this.btnSaida.Text = "NF-e Saída";
             this.btnSaida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaida.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSaida.UseVisualStyleBackColor = true;
+            this.btnSaida.UseVisualStyleBackColor = false;
+            this.btnSaida.Click += new System.EventHandler(this.btnSaida_Click);
             // 
             // btnEntrada
             // 
+            this.btnEntrada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(65)))), ((int)(((byte)(84)))));
             this.btnEntrada.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEntrada.FlatAppearance.BorderSize = 0;
             this.btnEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -229,7 +234,7 @@
             this.btnEntrada.Text = "NF-e Entrada";
             this.btnEntrada.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEntrada.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEntrada.UseVisualStyleBackColor = true;
+            this.btnEntrada.UseVisualStyleBackColor = false;
             this.btnEntrada.Click += new System.EventHandler(this.btnEntrada_Click);
             // 
             // btnRecuperarBase
@@ -293,13 +298,13 @@
             this.lblSuporte.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblSuporte.Location = new System.Drawing.Point(12, 78);
             this.lblSuporte.Name = "lblSuporte";
-            this.lblSuporte.Size = new System.Drawing.Size(140, 20);
+            this.lblSuporte.Size = new System.Drawing.Size(138, 20);
             this.lblSuporte.TabIndex = 1;
-            this.lblSuporte.Text = "Suporte Técnico";
+            this.lblSuporte.Text = "Monitor Suporte";
             // 
             // pictureHome
             // 
-            this.pictureHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.pictureHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(58)))), ((int)(((byte)(76)))));
             this.pictureHome.ForeColor = System.Drawing.Color.Gainsboro;
             this.pictureHome.IconChar = FontAwesome.Sharp.IconChar.ScrewdriverWrench;
             this.pictureHome.IconColor = System.Drawing.Color.Gainsboro;
@@ -323,14 +328,14 @@
             // 
             // panelTitleBar
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(58)))), ((int)(((byte)(76)))));
             this.panelTitleBar.Controls.Add(this.lblTitleChildForm);
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
             this.panelTitleBar.Controls.Add(this.panelShadow);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(180, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1054, 98);
+            this.panelTitleBar.Size = new System.Drawing.Size(828, 98);
             this.panelTitleBar.TabIndex = 5;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -364,7 +369,7 @@
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(180, 98);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1054, 480);
+            this.panelDesktop.Size = new System.Drawing.Size(828, 663);
             this.panelDesktop.TabIndex = 6;
             // 
             // FormMenuPrincipal
@@ -372,7 +377,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1234, 578);
+            this.ClientSize = new System.Drawing.Size(1008, 761);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -380,7 +385,6 @@
             this.Name = "FormMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.panelSubMenuXml.ResumeLayout(false);

@@ -10,40 +10,24 @@ using Npgsql;
 using System.Security.Cryptography;
 using System.Data;
 using UtilitarioSuporte.DataAccess;
+using System.Xml;
 
 namespace UtilitarioSuporte.Negocio
 {
     public static class Funcoes
-    {
-
-        public static DataTable ConectarBancoDados(string servidor, string porta, string baseDados, string usuario, string senha)
+    {       
+        public static List<string> DescriptografarStringConexao()
         {
-            string conexao = MontaStringConexao(servidor, porta, baseDados, usuario, senha);
-            NpgsqlConnection conn = Conexao.ConexaoBase(conexao);
-            DataTable empresas = ConsultarEmpresas(conn);
-            return empresas ;
-        }
-
-        public static DataTable ConsultarEmpresas(NpgsqlConnection conn)
-        {
-                NpgsqlCommand empresas = ComandosSQL.CmdEmpresas(conn);
-                DataTable dtEmpresas = Conexao.ExecReader(empresas, conn);
-                return dtEmpresas;
-        }
-
-        public static void SalvarConfiguracaoBaseDados(string servidor, string porta, string baseDados, string usuario, string senha, int idEmpresa)
-        {
-            string conexao = MontaStringConexao(servidor, porta, baseDados, usuario, senha);
-            CriptografarConexaoBanco(conexao, idEmpresa);
-        }
-
-        public static string DescriptografarStringConexaoAsync()
-        {
+            List<string> descriptografar = new List<string>();
             string conexao = DescriptografarConexaoBanco().ToString();
-            return conexao;
+            //Separação da StringConexão e do IdEmpresa que está criptografado no arquivo Configuração.
+            string[] infoConf = conexao.Split('|');
+            descriptografar.Add(infoConf[0]);
+            descriptografar.Add(infoConf[1]);
+            return descriptografar;
         }
 
-        private static string MontaStringConexao(string servidor, string porta, string baseDados, string usuario, string senha)
+        public static string MontaStringConexao(string servidor, string porta, string baseDados, string usuario, string senha)
         {
             StringBuilder StringConexao = new StringBuilder();
             StringConexao.Append($"User Id={usuario};")
@@ -56,7 +40,7 @@ namespace UtilitarioSuporte.Negocio
             return StringConexao.ToString();
         }
 
-        private static void CriptografarConexaoBanco(string conexao, int idEmpresa)
+        public static void CriptografarConexaoBanco(string conexao, int idEmpresa)
         {
             try
             {
@@ -142,6 +126,67 @@ namespace UtilitarioSuporte.Negocio
                 return null;
             }
         }
-        
+
+        public static string TransformarMesExtenso(int mes)
+        {
+            string mesExtenso = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(mes).ToLower();
+            mesExtenso = char.ToUpper(mesExtenso[0]) + mesExtenso.Substring(1);
+            return mesExtenso;
+        }
+
+        public static DataTable DiferencaDataTables(DataTable dtNfceLoja, DataTable dtNfceCaixa)
+        {
+
+            DataTable Resultado = new DataTable("ResultDataTable");
+
+            using (DataSet ds = new DataSet())
+            {
+                ds.Tables.AddRange(new DataTable[] { dtNfceLoja.Copy(), dtNfceCaixa.Copy() });
+
+                DataColumn[] firstColumns = new DataColumn[ds.Tables[0].Columns.Count];
+                for (int i = 0; i < firstColumns.Length; i++)
+                {
+                    firstColumns[i] = ds.Tables[0].Columns[i];
+                }
+
+                DataColumn[] secondColumns = new DataColumn[ds.Tables[1].Columns.Count];
+                for (int i = 0; i < secondColumns.Length; i++)
+                {
+                    secondColumns[i] = ds.Tables[1].Columns[i];
+                }
+
+                DataRelation r1 = new DataRelation(string.Empty, firstColumns, secondColumns, false);
+                ds.Relations.Add(r1);
+
+                DataRelation r2 = new DataRelation(string.Empty, secondColumns, firstColumns, false);
+                ds.Relations.Add(r2);
+
+                for (int i = 0; i < dtNfceLoja.Columns.Count; i++)
+                {
+                    Resultado.Columns.Add(dtNfceLoja.Columns[i].ColumnName, dtNfceLoja.Columns[i].DataType);
+                }
+                ////If FirstDataTable Row not in SecondDataTable, Add to ResultDataTable.  
+                //Resultado.BeginLoadData();
+                //foreach (DataRow parentrow in ds.Tables[0].Rows)
+                //{
+                //    DataRow[] childrows = parentrow.GetChildRows(r1);
+                //    if (childrows == null || childrows.Length == 0)
+                //        Resultado.LoadDataRow(parentrow.ItemArray, true);
+                //}
+
+                //If SecondDataTable Row not in FirstDataTable, Add to ResultDataTable.  
+                foreach (DataRow parentrow in ds.Tables[1].Rows)
+                {
+                    DataRow[] childrows = parentrow.GetChildRows(r2);
+                    if (childrows == null || childrows.Length == 0)
+                        Resultado.LoadDataRow(parentrow.ItemArray, true);
+                }
+                Resultado.EndLoadData();
+            }
+
+            return Resultado;
+        }
+
+
     }
 }

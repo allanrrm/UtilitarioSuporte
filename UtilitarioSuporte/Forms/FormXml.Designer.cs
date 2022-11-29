@@ -1,6 +1,6 @@
 ﻿namespace UtilitarioSuporte.Forms
 {
-    partial class FormDadosXml
+    partial class FormXml
     {
         /// <summary>
         /// Required designer variable.
@@ -33,10 +33,10 @@
             this.lblValorAutorizadas = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblValorA = new System.Windows.Forms.Label();
-            this.lblContadorSaltada = new System.Windows.Forms.Label();
+            this.lblContadorNotasXml = new System.Windows.Forms.Label();
             this.lblContadorCanceladas = new System.Windows.Forms.Label();
             this.lblContadorAutorizadas = new System.Windows.Forms.Label();
-            this.lblSaltadas = new System.Windows.Forms.Label();
+            this.lblNotasXml = new System.Windows.Forms.Label();
             this.lblCanceladas = new System.Windows.Forms.Label();
             this.lblAutorizadas = new System.Windows.Forms.Label();
             this.lblContadorNotas = new System.Windows.Forms.Label();
@@ -45,20 +45,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewDivergente = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewXml = new System.Windows.Forms.DataGridView();
             this.btnExtrair = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.comboBoxMes = new System.Windows.Forms.ComboBox();
-            this.textBoxAno = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxAno = new System.Windows.Forms.TextBox();
+            this.comboBoxMes = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDivergente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXml)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,14 +66,16 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lblValorXml);
             this.panel1.Controls.Add(this.lblValorAutorizadas);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblValorA);
-            this.panel1.Controls.Add(this.lblContadorSaltada);
+            this.panel1.Controls.Add(this.lblContadorNotasXml);
             this.panel1.Controls.Add(this.lblContadorCanceladas);
             this.panel1.Controls.Add(this.lblContadorAutorizadas);
-            this.panel1.Controls.Add(this.lblSaltadas);
+            this.panel1.Controls.Add(this.lblNotasXml);
             this.panel1.Controls.Add(this.lblCanceladas);
             this.panel1.Controls.Add(this.lblAutorizadas);
             this.panel1.Controls.Add(this.lblContadorNotas);
@@ -85,32 +87,39 @@
             // 
             // lblValorXml
             // 
-            this.lblValorXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValorXml.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblValorXml.AutoSize = true;
             this.lblValorXml.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorXml.Location = new System.Drawing.Point(650, 62);
+            this.lblValorXml.Location = new System.Drawing.Point(592, 72);
             this.lblValorXml.Name = "lblValorXml";
-            this.lblValorXml.Size = new System.Drawing.Size(44, 16);
+            this.lblValorXml.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblValorXml.Size = new System.Drawing.Size(11, 16);
             this.lblValorXml.TabIndex = 6;
-            this.lblValorXml.Text = "label1";
+            this.lblValorXml.Text = "-";
+            this.lblValorXml.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblValorAutorizadas
             // 
-            this.lblValorAutorizadas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValorAutorizadas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblValorAutorizadas.AutoSize = true;
             this.lblValorAutorizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorAutorizadas.Location = new System.Drawing.Point(650, 24);
+            this.lblValorAutorizadas.Location = new System.Drawing.Point(592, 11);
             this.lblValorAutorizadas.Name = "lblValorAutorizadas";
-            this.lblValorAutorizadas.Size = new System.Drawing.Size(44, 16);
+            this.lblValorAutorizadas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblValorAutorizadas.Size = new System.Drawing.Size(11, 16);
             this.lblValorAutorizadas.TabIndex = 5;
-            this.lblValorAutorizadas.Text = "label1";
+            this.lblValorAutorizadas.Text = "-";
+            this.lblValorAutorizadas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(437, 62);
+            this.label1.Location = new System.Drawing.Point(379, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 16);
             this.label1.TabIndex = 3;
@@ -118,65 +127,77 @@
             // 
             // lblValorA
             // 
-            this.lblValorA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValorA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblValorA.AutoSize = true;
             this.lblValorA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorA.Location = new System.Drawing.Point(463, 24);
+            this.lblValorA.Location = new System.Drawing.Point(405, 11);
             this.lblValorA.Name = "lblValorA";
             this.lblValorA.Size = new System.Drawing.Size(181, 16);
             this.lblValorA.TabIndex = 2;
             this.lblValorA.Text = "Valor (Somente Autorizadas):";
             // 
-            // lblContadorSaltada
+            // lblContadorNotasXml
             // 
-            this.lblContadorSaltada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblContadorSaltada.AutoSize = true;
-            this.lblContadorSaltada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContadorSaltada.Location = new System.Drawing.Point(295, 72);
-            this.lblContadorSaltada.Name = "lblContadorSaltada";
-            this.lblContadorSaltada.Size = new System.Drawing.Size(44, 16);
-            this.lblContadorSaltada.TabIndex = 2;
-            this.lblContadorSaltada.Text = "label1";
+            this.lblContadorNotasXml.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblContadorNotasXml.AutoSize = true;
+            this.lblContadorNotasXml.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContadorNotasXml.Location = new System.Drawing.Point(293, 72);
+            this.lblContadorNotasXml.Name = "lblContadorNotasXml";
+            this.lblContadorNotasXml.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblContadorNotasXml.Size = new System.Drawing.Size(11, 16);
+            this.lblContadorNotasXml.TabIndex = 2;
+            this.lblContadorNotasXml.Text = "-";
+            this.lblContadorNotasXml.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblContadorCanceladas
             // 
-            this.lblContadorCanceladas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblContadorCanceladas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContadorCanceladas.AutoSize = true;
             this.lblContadorCanceladas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContadorCanceladas.Location = new System.Drawing.Point(295, 42);
+            this.lblContadorCanceladas.Location = new System.Drawing.Point(293, 41);
             this.lblContadorCanceladas.Name = "lblContadorCanceladas";
-            this.lblContadorCanceladas.Size = new System.Drawing.Size(44, 16);
+            this.lblContadorCanceladas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblContadorCanceladas.Size = new System.Drawing.Size(11, 16);
             this.lblContadorCanceladas.TabIndex = 3;
-            this.lblContadorCanceladas.Text = "label1";
+            this.lblContadorCanceladas.Text = "-";
+            this.lblContadorCanceladas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblContadorAutorizadas
             // 
-            this.lblContadorAutorizadas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblContadorAutorizadas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContadorAutorizadas.AutoSize = true;
             this.lblContadorAutorizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContadorAutorizadas.Location = new System.Drawing.Point(295, 10);
+            this.lblContadorAutorizadas.Location = new System.Drawing.Point(293, 11);
             this.lblContadorAutorizadas.Name = "lblContadorAutorizadas";
-            this.lblContadorAutorizadas.Size = new System.Drawing.Size(44, 16);
+            this.lblContadorAutorizadas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblContadorAutorizadas.Size = new System.Drawing.Size(11, 16);
             this.lblContadorAutorizadas.TabIndex = 4;
-            this.lblContadorAutorizadas.Text = "label1";
+            this.lblContadorAutorizadas.Text = "-";
+            this.lblContadorAutorizadas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblSaltadas
+            // lblNotasXml
             // 
-            this.lblSaltadas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSaltadas.AutoSize = true;
-            this.lblSaltadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaltadas.Location = new System.Drawing.Point(156, 72);
-            this.lblSaltadas.Name = "lblSaltadas";
-            this.lblSaltadas.Size = new System.Drawing.Size(131, 16);
-            this.lblSaltadas.TabIndex = 3;
-            this.lblSaltadas.Text = "Numeração Saltada:";
+            this.lblNotasXml.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNotasXml.AutoSize = true;
+            this.lblNotasXml.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotasXml.Location = new System.Drawing.Point(183, 72);
+            this.lblNotasXml.Name = "lblNotasXml";
+            this.lblNotasXml.Size = new System.Drawing.Size(104, 16);
+            this.lblNotasXml.TabIndex = 3;
+            this.lblNotasXml.Text = "Notas com XML:";
             // 
             // lblCanceladas
             // 
-            this.lblCanceladas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCanceladas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCanceladas.AutoSize = true;
             this.lblCanceladas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCanceladas.Location = new System.Drawing.Point(206, 42);
+            this.lblCanceladas.Location = new System.Drawing.Point(204, 42);
             this.lblCanceladas.Name = "lblCanceladas";
             this.lblCanceladas.Size = new System.Drawing.Size(83, 16);
             this.lblCanceladas.TabIndex = 2;
@@ -184,7 +205,8 @@
             // 
             // lblAutorizadas
             // 
-            this.lblAutorizadas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAutorizadas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAutorizadas.AutoSize = true;
             this.lblAutorizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAutorizadas.Location = new System.Drawing.Point(206, 11);
@@ -195,21 +217,23 @@
             // 
             // lblContadorNotas
             // 
-            this.lblContadorNotas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblContadorNotas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContadorNotas.AutoSize = true;
-            this.lblContadorNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContadorNotas.Location = new System.Drawing.Point(40, 49);
+            this.lblContadorNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContadorNotas.Location = new System.Drawing.Point(60, 41);
             this.lblContadorNotas.Name = "lblContadorNotas";
-            this.lblContadorNotas.Size = new System.Drawing.Size(51, 20);
+            this.lblContadorNotas.Size = new System.Drawing.Size(15, 20);
             this.lblContadorNotas.TabIndex = 1;
-            this.lblContadorNotas.Text = "label1";
+            this.lblContadorNotas.Text = "-";
             // 
             // lblNumeroNotas
             // 
-            this.lblNumeroNotas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNumeroNotas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNumeroNotas.AutoSize = true;
             this.lblNumeroNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroNotas.Location = new System.Drawing.Point(7, 11);
+            this.lblNumeroNotas.Location = new System.Drawing.Point(12, 24);
             this.lblNumeroNotas.Name = "lblNumeroNotas";
             this.lblNumeroNotas.Size = new System.Drawing.Size(123, 17);
             this.lblNumeroNotas.TabIndex = 0;
@@ -219,12 +243,14 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.dataGridView3);
+            this.panel2.Controls.Add(this.dataGridViewDivergente);
             this.panel2.Controls.Add(this.dataGridView2);
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dataGridViewXml);
             this.panel2.Location = new System.Drawing.Point(12, 131);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(939, 307);
@@ -235,22 +261,24 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(721, 16);
+            this.label4.Location = new System.Drawing.Point(629, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Xml Divergente";
+            this.label4.Visible = false;
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(392, 16);
+            this.label3.Location = new System.Drawing.Point(318, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Numeros Saltados";
+            this.label3.Visible = false;
             // 
             // label2
             // 
@@ -258,45 +286,51 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(131, 16);
+            this.label2.Location = new System.Drawing.Point(14, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 20);
+            this.label2.Size = new System.Drawing.Size(137, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Xmls";
+            this.label2.Text = "Notas Detalhadas";
             // 
-            // dataGridView3
+            // dataGridViewDivergente
             // 
-            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(635, 39);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(286, 254);
-            this.dataGridView3.TabIndex = 2;
+            this.dataGridViewDivergente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewDivergente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDivergente.Location = new System.Drawing.Point(633, 39);
+            this.dataGridViewDivergente.Name = "dataGridViewDivergente";
+            this.dataGridViewDivergente.Size = new System.Drawing.Size(286, 254);
+            this.dataGridViewDivergente.TabIndex = 2;
             // 
             // dataGridView2
             // 
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(324, 39);
+            this.dataGridView2.Location = new System.Drawing.Point(322, 39);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(286, 254);
             this.dataGridView2.TabIndex = 1;
+            this.dataGridView2.Visible = false;
             // 
-            // dataGridView1
+            // dataGridViewXml
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewXml.AllowUserToOrderColumns = true;
+            this.dataGridViewXml.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 39);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(286, 254);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewXml.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewXml.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewXml.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewXml.Location = new System.Drawing.Point(18, 39);
+            this.dataGridViewXml.Name = "dataGridViewXml";
+            this.dataGridViewXml.Size = new System.Drawing.Size(284, 254);
+            this.dataGridViewXml.TabIndex = 0;
             // 
             // btnExtrair
             // 
+            this.btnExtrair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
             this.btnExtrair.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnExtrair.FlatAppearance.BorderSize = 0;
             this.btnExtrair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExtrair.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnExtrair.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnExtrair.IconColor = System.Drawing.Color.Black;
             this.btnExtrair.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -305,10 +339,13 @@
             this.btnExtrair.Size = new System.Drawing.Size(963, 42);
             this.btnExtrair.TabIndex = 2;
             this.btnExtrair.Text = "Extrair";
-            this.btnExtrair.UseVisualStyleBackColor = true;
+            this.btnExtrair.UseVisualStyleBackColor = false;
+            this.btnExtrair.Click += new System.EventHandler(this.btnExtrair_Click);
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.textBoxAno);
@@ -317,6 +354,36 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(221, 100);
             this.panel3.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(115, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 20);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Ano";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 20);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Mês";
+            // 
+            // textBoxAno
+            // 
+            this.textBoxAno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxAno.Location = new System.Drawing.Point(119, 37);
+            this.textBoxAno.Name = "textBoxAno";
+            this.textBoxAno.Size = new System.Drawing.Size(83, 20);
+            this.textBoxAno.TabIndex = 1;
             // 
             // comboBoxMes
             // 
@@ -334,58 +401,30 @@
             "Outubro",
             "Novembro",
             "Dezembro"});
-            this.comboBoxMes.Location = new System.Drawing.Point(3, 37);
+            this.comboBoxMes.Location = new System.Drawing.Point(18, 37);
             this.comboBoxMes.Name = "comboBoxMes";
-            this.comboBoxMes.Size = new System.Drawing.Size(127, 21);
+            this.comboBoxMes.Size = new System.Drawing.Size(88, 21);
             this.comboBoxMes.TabIndex = 0;
             // 
-            // textBoxAno
-            // 
-            this.textBoxAno.Location = new System.Drawing.Point(135, 37);
-            this.textBoxAno.Name = "textBoxAno";
-            this.textBoxAno.Size = new System.Drawing.Size(83, 20);
-            this.textBoxAno.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 20);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Mês";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(131, 14);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 20);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Ano";
-            // 
-            // FormDadosXml
+            // FormXml
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(963, 505);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnExtrair);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "FormDadosXml";
+            this.Name = "FormXml";
             this.Text = "DadosXml";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDivergente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXml)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -398,10 +437,10 @@
         private System.Windows.Forms.Label lblValorAutorizadas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblValorA;
-        private System.Windows.Forms.Label lblContadorSaltada;
+        private System.Windows.Forms.Label lblContadorNotasXml;
         private System.Windows.Forms.Label lblContadorCanceladas;
         private System.Windows.Forms.Label lblContadorAutorizadas;
-        private System.Windows.Forms.Label lblSaltadas;
+        private System.Windows.Forms.Label lblNotasXml;
         private System.Windows.Forms.Label lblCanceladas;
         private System.Windows.Forms.Label lblAutorizadas;
         private System.Windows.Forms.Label lblContadorNotas;
@@ -411,9 +450,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridViewDivergente;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewXml;
         private FontAwesome.Sharp.IconButton btnExtrair;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox textBoxAno;

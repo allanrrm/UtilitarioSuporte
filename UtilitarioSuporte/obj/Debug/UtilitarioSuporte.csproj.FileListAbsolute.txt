@@ -25,4 +25,4 @@ C:\Dev\UtilitarioSuporte\UtilitarioSuporte\bin\Debug\System.Runtime.CompilerServ
 C:\Dev\UtilitarioSuporte\UtilitarioSuporte\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Dev\UtilitarioSuporte\UtilitarioSuporte\bin\Debug\System.ValueTuple.xml
 C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.Recursos.MessageBoxPersonalizada.resources
-C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.Forms.FormDadosXml.resources
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.Forms.FormXml.resources

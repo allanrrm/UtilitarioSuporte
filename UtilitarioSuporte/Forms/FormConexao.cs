@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UtilitarioSuporte.Negocio;
+using DataAccess;
 
 namespace UtilitarioSuporte
 {
@@ -21,7 +22,7 @@ namespace UtilitarioSuporte
 
         private void btnConectar_Click(object sender, EventArgs e)
         {
-            DataTable dataTableEmpresa = Funcoes.ConectarBancoDados(textBoxIpServidor.Text, textBoxPorta.Text, textBoxBaseDados.Text, textBoxUsuario.Text, textBoxSenha.Text);
+            DataTable dataTableEmpresa = Conexao.ConectarBancoDados(textBoxIpServidor.Text, textBoxPorta.Text, textBoxBaseDados.Text, textBoxUsuario.Text, textBoxSenha.Text);
             comboBoxEmpresa.DisplayMember = "nome_razao_social";
             comboBoxEmpresa.DataSource = dataTableEmpresa;
             if(dataTableEmpresa != null)            
@@ -36,7 +37,7 @@ namespace UtilitarioSuporte
             int idEmpresa;
             var t = (DataRowView)comboBoxEmpresa.SelectedItem;
             idEmpresa = (int)t[0];
-            Funcoes.SalvarConfiguracaoBaseDados(textBoxIpServidor.Text, textBoxPorta.Text, textBoxBaseDados.Text, textBoxUsuario.Text, textBoxSenha.Text, idEmpresa);
+            Conexao.SalvarConfiguracaoBaseDados(textBoxIpServidor.Text, textBoxPorta.Text, textBoxBaseDados.Text, textBoxUsuario.Text, textBoxSenha.Text, idEmpresa);
             Close();
         }
     }

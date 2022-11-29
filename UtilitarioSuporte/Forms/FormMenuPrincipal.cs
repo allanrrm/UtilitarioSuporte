@@ -62,12 +62,13 @@ namespace UtilitarioSuporte
 
         private struct RGBColors
         {
-            public static Color color1 = Color.FromArgb(172, 126, 241);
+            public static Color color1 = Color.FromArgb(94, 181, 247);
             public static Color color2 = Color.FromArgb(249, 118, 176);
             public static Color color3 = Color.FromArgb(253, 138, 114);
             public static Color color4 = Color.FromArgb(95, 77, 221);
             public static Color color5 = Color.FromArgb(249, 88, 155);
             public static Color color6 = Color.FromArgb(24, 161, 251);
+            public static Color color7 = Color.FromArgb(240, 240, 240);
         }
 
         //Metodos
@@ -77,7 +78,7 @@ namespace UtilitarioSuporte
             {
                 DisabeButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(240,240,240);
+                currentBtn.BackColor = Color.FromArgb(23, 33, 43);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -99,7 +100,7 @@ namespace UtilitarioSuporte
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(31,31,31) ;
+                currentBtn.BackColor = Color.FromArgb(41, 58, 76) ;
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
@@ -131,32 +132,42 @@ namespace UtilitarioSuporte
         {
 
             lblTitleChildForm.Text = "XML";
-            ActivateButton(sender, RGBColors.color4);
+            ActivateButton(sender, RGBColors.color1);
             MostrarSubMenu(panelSubMenuXml);
             //OpenChildForm(new FormExtrairXml());
         }
 
         private void btnEntrada_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormDadosXml(0));
+
+            OpenChildForm(new FormXml(0));
+        }
+        private void btnSaida_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormXml(1));
+        }
+
+        private void btnNFCe_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormXml(2));
         }
 
         private void btnRecuperarBase_Click(object sender, EventArgs e)
         {
             EsconderSubMenu();
-            ActivateButton(sender, RGBColors.color2);           
+            ActivateButton(sender, RGBColors.color1);           
         }
 
         private void btnExterno_Click(object sender, EventArgs e)
         {
             EsconderSubMenu();
-            ActivateButton(sender, RGBColors.color3);
+            ActivateButton(sender, RGBColors.color1);
         }
 
         private void btnConexao_Click(object sender, EventArgs e)
         {
             EsconderSubMenu();
-            ActivateButton(sender, RGBColors.color6);
+            ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormConexao());
         }
 
@@ -212,7 +223,7 @@ namespace UtilitarioSuporte
 
         private void btnFechar_MouseLeave(object sender, EventArgs e)
         {
-            btnFechar.BackColor= Color.FromArgb(31, 31, 31);
+            btnFechar.BackColor= Color.FromArgb(41, 58, 76);
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
