@@ -70,13 +70,12 @@ namespace UtilitarioSuporte.Negocio
                 DirectoryInfo dir = new DirectoryInfo(diretorio);
                 if (!dir.Exists)
                 {
-                    throw new DirectoryNotFoundException("O Diretorio Não Existe");
+                    return dt;
 
                 }
                 arquivos = Directory.GetFiles(diretorio, "*.xml");
                 foreach (string arquivo in arquivos)
                 {
-
                     XmlDocument documento = new XmlDocument();
                     documento.Load(arquivo);
                     XmlElement xmlelement = documento.DocumentElement;

@@ -90,99 +90,106 @@ namespace DataAccess
             XmlDocument recibo, xmlNFCe;
             string nomeArquivo = null;
             IEnumerable<DataRow> query = dtNotas.AsEnumerable().Where(x => x.Field<object>("xml") != null);
-            DataTable dataTableNotas = query.CopyToDataTable<DataRow>();
-            foreach (DataRow drItemNfce in dataTableNotas.Rows)
+            try
             {
-                string caminhoPasta = "";
-                if (OpcaoComando == 0)
+                DataTable dataTableNotas = query.CopyToDataTable<DataRow>();
+                foreach (DataRow drItemNfce in dataTableNotas.Rows)
                 {
-                    caminhoPasta = @"C:\Autocom\Sintegra\" + datainicial.Year + @"\Sintegra " + Funcoes.TransformarMesExtenso(datainicial.Month) + @"\NFe - Entrada(xml)\";
-                    xml.LoadXml(System.Text.Encoding.UTF8.GetString((byte[])drItemNfce[6]));
-                    nomeArquivo = $"{caminhoPasta}\\{drItemNfce[5]}-nfe.xml";
-                }
-                else if (OpcaoComando == 1)
-                {
-                    caminhoPasta = @"C:\Autocom\Sintegra\" + datainicial.Year + @"\Sintegra " + Funcoes.TransformarMesExtenso(datainicial.Month) + @"\NFe - Saída(xml)\";
-                    xml.LoadXml(System.Text.Encoding.UTF8.GetString((byte[])drItemNfce[6]));
-                    nomeArquivo = $"{caminhoPasta}\\{drItemNfce[5]}-nfe.xml";
-                }
-                else if (OpcaoComando == 2)
-                {
-                    if (drItemNfce["recibo"].ToString() != "")
+                    string caminhoPasta = "";
+                    if (OpcaoComando == 0)
                     {
-
-                        caminhoPasta = @"C:\Autocom\Sintegra\" + datainicial.Year + @"\Sintegra " + Funcoes.TransformarMesExtenso(datainicial.Month) + @"\NFCe - (xml)\";
-                        xmlNFCe = new XmlDocument();
-                        xmlNFCe.LoadXml(System.Text.Encoding.UTF8.GetString((byte[])drItemNfce["xml"]));
-                        XmlNode nodeNFe_Original = xmlNFCe.GetElementsByTagName("NFe").Item(0);
-
-                        recibo = new XmlDocument();
-
-                        recibo.LoadXml(System.Text.Encoding.UTF8.GetString((byte[])drItemNfce["recibo"]));
-                        var protNFe_Original = recibo.GetElementsByTagName("protNFe").Item(0);
-
-                        #region Criando novo XML com a Tag/node pai nfProc
-                        xml = new XmlDocument();
-                        XmlNode nfeProc = xml.CreateElement("nfeProc");
-
-                        xml.AppendChild(nfeProc);
-                        XmlAttribute versao = xml.CreateAttribute("versao");
-                        versao.Value = "4.00";
-
-                        nfeProc.Attributes.Append(versao);
-                        XmlAttribute xmlns = xml.CreateAttribute("xmlns");
-                        xmlns.Value = "http://www.portalfiscal.inf.br/nfe";
-                        nfeProc.Attributes.Append(xmlns);
-                        #endregion
-
-                        #region Importando as tags/Nodes dos Xmls recuperados do bando do Loja para o novo XML
-                        //nodeNFe_Original.Attributes.RemoveNamedItem("xmlns");
-                        //protNFe_Original.Attributes.RemoveNamedItem("xmlns");
-                        //protNFe_Original.FirstChild.Attributes.RemoveNamedItem("Id");
-
-                        XmlNode nodeNFe_Importado = xml.ImportNode(nodeNFe_Original, true);
-                        xml.FirstChild.AppendChild(nodeNFe_Importado);
-
-                        XmlNode protNFe_Importado = xml.ImportNode(protNFe_Original, true);
-                        xml.FirstChild.AppendChild(protNFe_Importado);
-                        #endregion
-
-                        #region Removendo atributos para igualar ao arquivo -procNfe que o sistema Gera
-                        xml.GetElementsByTagName("NFe").Item(0).Attributes.RemoveNamedItem("xmlns");
-                        xml.GetElementsByTagName("protNFe").Item(0).Attributes.RemoveNamedItem("xmlns");
-                        xml.GetElementsByTagName("infProt").Item(0).Attributes.RemoveNamedItem("Id");
-                        #endregion
-                        nomeArquivo = $"{caminhoPasta}\\NFCe-{drItemNfce[5]}-procNfe.xml";
-
-                    }
-                    else
-                    {
-                        caminhoPasta = @"C:\Autocom\Sintegra\" + datainicial.Year + @"\Sintegra " + Funcoes.TransformarMesExtenso(datainicial.Month) + @"\NFCe - (xml) - Temp\";
+                        caminhoPasta = @"C:\Autocom\Sintegra\" + datainicial.Year + @"\Sintegra " + Funcoes.TransformarMesExtenso(datainicial.Month) + @"\NFe - Entrada(xml)\";
                         xml.LoadXml(System.Text.Encoding.UTF8.GetString((byte[])drItemNfce[6]));
-                        nomeArquivo = $"{caminhoPasta}\\NFCe-{drItemNfce[5]}-procNfe.xml";
+                        nomeArquivo = $"{caminhoPasta}\\{drItemNfce[5]}-nfe.xml";
+                    }
+                    else if (OpcaoComando == 1)
+                    {
+                        caminhoPasta = @"C:\Autocom\Sintegra\" + datainicial.Year + @"\Sintegra " + Funcoes.TransformarMesExtenso(datainicial.Month) + @"\NFe - Saída(xml)\";
+                        xml.LoadXml(System.Text.Encoding.UTF8.GetString((byte[])drItemNfce[6]));
+                        nomeArquivo = $"{caminhoPasta}\\{drItemNfce[5]}-nfe.xml";
+                    }
+                    else if (OpcaoComando == 2)
+                    {
+                        if (drItemNfce["recibo"].ToString() != "")
+                        {
+
+                            caminhoPasta = @"C:\Autocom\Sintegra\" + datainicial.Year + @"\Sintegra " + Funcoes.TransformarMesExtenso(datainicial.Month) + @"\NFCe - (xml)\";
+                            xmlNFCe = new XmlDocument();
+                            xmlNFCe.LoadXml(System.Text.Encoding.UTF8.GetString((byte[])drItemNfce["xml"]));
+                            XmlNode nodeNFe_Original = xmlNFCe.GetElementsByTagName("NFe").Item(0);
+
+                            recibo = new XmlDocument();
+
+                            recibo.LoadXml(System.Text.Encoding.UTF8.GetString((byte[])drItemNfce["recibo"]));
+                            var protNFe_Original = recibo.GetElementsByTagName("protNFe").Item(0);
+
+                            #region Criando novo XML com a Tag/node pai nfProc
+                            xml = new XmlDocument();
+                            XmlNode nfeProc = xml.CreateElement("nfeProc");
+
+                            xml.AppendChild(nfeProc);
+                            XmlAttribute versao = xml.CreateAttribute("versao");
+                            versao.Value = "4.00";
+
+                            nfeProc.Attributes.Append(versao);
+                            XmlAttribute xmlns = xml.CreateAttribute("xmlns");
+                            xmlns.Value = "http://www.portalfiscal.inf.br/nfe";
+                            nfeProc.Attributes.Append(xmlns);
+                            #endregion
+
+                            #region Importando as tags/Nodes dos Xmls recuperados do bando do Loja para o novo XML
+                            //nodeNFe_Original.Attributes.RemoveNamedItem("xmlns");
+                            //protNFe_Original.Attributes.RemoveNamedItem("xmlns");
+                            //protNFe_Original.FirstChild.Attributes.RemoveNamedItem("Id");
+
+                            XmlNode nodeNFe_Importado = xml.ImportNode(nodeNFe_Original, true);
+                            xml.FirstChild.AppendChild(nodeNFe_Importado);
+
+                            XmlNode protNFe_Importado = xml.ImportNode(protNFe_Original, true);
+                            xml.FirstChild.AppendChild(protNFe_Importado);
+                            #endregion
+
+                            #region Removendo atributos para igualar ao arquivo -procNfe que o sistema Gera
+                            xml.GetElementsByTagName("NFe").Item(0).Attributes.RemoveNamedItem("xmlns");
+                            xml.GetElementsByTagName("protNFe").Item(0).Attributes.RemoveNamedItem("xmlns");
+                            xml.GetElementsByTagName("infProt").Item(0).Attributes.RemoveNamedItem("Id");
+                            #endregion
+                            nomeArquivo = $"{caminhoPasta}\\NFCe-{drItemNfce[5]}-procNfe.xml";
+
+                        }
+                        else
+                        {
+                            caminhoPasta = @"C:\Autocom\Sintegra\" + datainicial.Year + @"\Sintegra " + Funcoes.TransformarMesExtenso(datainicial.Month) + @"\NFCe - (xml)\";
+                            xml.LoadXml(System.Text.Encoding.UTF8.GetString((byte[])drItemNfce[6]));
+                            nomeArquivo = $"{caminhoPasta}\\NFCe-{drItemNfce[5]}-temp.xml";
+                        }
+
+
+
                     }
 
 
+                    if (!Directory.Exists(caminhoPasta))
+                    {
+                        Directory.CreateDirectory(caminhoPasta);
+                    }
 
-                }
+                    if (File.Exists(nomeArquivo))
+                    {
+                        File.Delete(nomeArquivo);
+                    }
 
-
-                if (!Directory.Exists(caminhoPasta))
-                {
-                    Directory.CreateDirectory(caminhoPasta);
-                }
-
-                if (File.Exists(nomeArquivo))
-                {
-                    File.Delete(nomeArquivo);
-                }
-
-                using (var arquivoXML = new StreamWriter(nomeArquivo))
-                {
-                    arquivoXML.Write(xml.InnerXml);
+                    using (var arquivoXML = new StreamWriter(nomeArquivo))
+                    {
+                        arquivoXML.Write(xml.InnerXml);
+                    }
                 }
             }
-        }
+            catch (Exception ex)
+            {
+
+            }
+        } 
 
         public static void ExtrairBaseNotasCanceladas(DataTable dtNotas, int OpcaoComando, string mes, string ano)
         {
@@ -255,7 +262,7 @@ namespace DataAccess
                         }
                         else
                         {
-                            caminhoPasta = @"C:\Autocom\Sintegra\" + datainicial.Year + @"\Sintegra " + Funcoes.TransformarMesExtenso(datainicial.Month) + @"\NFCe - (xml) - Canceladas - Temp\";
+                            caminhoPasta = @"C:\Autocom\Sintegra\" + datainicial.Year + @"\Sintegra " + Funcoes.TransformarMesExtenso(datainicial.Month) + @"\NFCe - (xml) - Canceladas\";
                             xml.LoadXml(System.Text.Encoding.UTF8.GetString((byte[])drItemNfce[6]));
                             nomeArquivo = $"{caminhoPasta}\\NFCe-{drItemNfce[5]}-procNfe.xml";
                         }

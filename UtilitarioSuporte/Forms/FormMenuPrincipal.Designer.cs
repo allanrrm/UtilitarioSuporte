@@ -383,7 +383,7 @@
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormMenuPrincipal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form1";
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();

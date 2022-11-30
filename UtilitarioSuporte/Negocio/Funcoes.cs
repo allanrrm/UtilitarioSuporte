@@ -134,14 +134,27 @@ namespace UtilitarioSuporte.Negocio
             return mesExtenso;
         }
 
-        public static DataTable DiferencaDataTables(DataTable dtNfceLoja, DataTable dtNfceCaixa)
+        public static DataTable DiferencaDataTables(DataTable dtNfceLoja, DataTable dtNfceCaixa, int tipo)
         {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Numero", typeof(int));
+            dt.Columns.Add("ValorTotal", typeof(decimal));
+
+            foreach (DataRow dr in dtNfceLoja.Rows)
+            {
+                if(tipo == 2)
+                    dt.Rows.Add(new object[] {dr["Numero"],dr["ValorTotal"]});
+                else
+                {
+                    dt.Rows.Add(new object[] { dr["Numero"], dr["Total"] });
+                }
+            }
 
             DataTable Resultado = new DataTable("ResultDataTable");
 
             using (DataSet ds = new DataSet())
             {
-                ds.Tables.AddRange(new DataTable[] { dtNfceLoja.Copy(), dtNfceCaixa.Copy() });
+                ds.Tables.AddRange(new DataTable[] { dt.Copy(), dtNfceCaixa.Copy() });
 
                 DataColumn[] firstColumns = new DataColumn[ds.Tables[0].Columns.Count];
                 for (int i = 0; i < firstColumns.Length; i++)
@@ -161,9 +174,9 @@ namespace UtilitarioSuporte.Negocio
                 DataRelation r2 = new DataRelation(string.Empty, secondColumns, firstColumns, false);
                 ds.Relations.Add(r2);
 
-                for (int i = 0; i < dtNfceLoja.Columns.Count; i++)
+                for (int i = 0; i < dt.Columns.Count; i++)
                 {
-                    Resultado.Columns.Add(dtNfceLoja.Columns[i].ColumnName, dtNfceLoja.Columns[i].DataType);
+                    Resultado.Columns.Add(dt.Columns[i].ColumnName, dt.Columns[i].DataType);
                 }
                 ////If FirstDataTable Row not in SecondDataTable, Add to ResultDataTable.  
                 //Resultado.BeginLoadData();

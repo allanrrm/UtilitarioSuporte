@@ -162,6 +162,7 @@ namespace UtilitarioSuporte
         {
             EsconderSubMenu();
             ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new FormExterno());
         }
 
         private void btnConexao_Click(object sender, EventArgs e)

@@ -73,6 +73,12 @@
   <ItemGroup>
     <Compile Include="DataAccess\ComandosSQL.cs" />
     <Compile Include="DataAccess\DataAccess.cs" />
+    <Compile Include="Forms\FormExterno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormExterno.Designer.cs">
+      <DependentUpon>FormExterno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormXml.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Recursos\MessageBoxPersonalizada.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="Forms\FormExterno.resx">
+      <DependentUpon>FormExterno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormXml.resx">
       <DependentUpon>FormXml.cs</DependentUpon>
     </EmbeddedResource>

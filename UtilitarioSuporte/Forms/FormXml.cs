@@ -49,9 +49,15 @@ namespace UtilitarioSuporte.Forms
             textBoxAno.Text = DateTime.Now.Year.ToString();
             DAO.ExtrairNotas(comboBoxMes.Text, textBoxAno.Text, tipo, notaXml);
             notaXml.DataTableNotasXml = DAO.CapturarInformacoesXml(tipo);
-            notaXml.CalcularValorXml(notaXml.DataTableNotasXml);
+            notaXml.CalcularValorXml(notaXml.DataTableNotasXml, tipo);
+            if (tipo == 2)
+            {
+                notaXml.AgruparValorPorSerie(notaXml.DataTableNotas);
+                dataGridViewSerie.DataSource = notaXml.DataTableSerie;
+            }
+
             lblValorXml.Text = notaXml.ValorTotalXml.ToString();
-            dataGridViewDivergente.DataSource = Funcoes.DiferencaDataTables(notaXml.DataTableNotas, notaXml.DataTableNotasXml);
+            dataGridViewDivergente.DataSource = Funcoes.DiferencaDataTables(notaXml.DataTableNotas, notaXml.DataTableNotasXml, tipo);
 
         }
     }

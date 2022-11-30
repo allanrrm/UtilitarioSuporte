@@ -18,14 +18,11 @@ namespace UtilitarioSuporte.Negocio
         public int NotasComXml { get; set; }
         public DataTable DataTableNotas { get; set; }
         public DataTable DataTableNotasXml { get; set; }
-
-
-
+        public DataTable DataTableSerie { get; set; }
         public NotaXml()
         {
 
         }
-
         public void ExtrairResultadosNFe(DataTable dataTableNotas)
         {
             NumeroNotas = dataTableNotas.AsEnumerable().Select(s => s.Field<int>("numero")).Count();
@@ -46,8 +43,45 @@ namespace UtilitarioSuporte.Negocio
             DataTableNotas = dataTableNotas.Copy();
 
         }
+        public void AgruparValorPorSerie(DataTable dataTableNotas)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Serie", typeof(string));
+            dt.Columns.Add("ValorTotal", typeof(decimal));
+            
+            foreach (DataRow dr in dataTableNotas.Rows)
+            {
+                dt.Rows.Add(new object[] { dr["Serie"], dr["ValorTotal"] });
+            }
 
-        public void CalcularValorXml(DataTable dataTableNotas)
+           var obj = from b in dt.AsEnumerable()
+                     group b by b.Field<string>("Serie") into g
+                     select new
+                     {
+                         Serie = g.Key,
+                         List = g.ToList(),
+                     } into g
+                     select new
+                     {
+                         g.Serie,
+                         Count = g.List.Count,
+                         ValorTotal = g.List.Sum(x => x.Field<decimal>("ValorTotal"))
+                     };
+
+
+            DataTable dtab = new DataTable();
+            dtab.Columns.Add("Serie", typeof(string));
+            dtab.Columns.Add("ValorTotal", typeof(decimal));
+            
+            foreach (var drow in obj)
+            {
+                dtab.Rows.Add(drow.Serie,drow.ValorTotal);
+            }
+
+            DataTableSerie = dtab.Copy();
+
+        }
+        public void CalcularValorXml(DataTable dataTableNotas, int tipo)
         {
             ValorTotalXml = (double)dataTableNotas.AsEnumerable().Select(s => s.Field<decimal>("valor")).Sum();
         }
