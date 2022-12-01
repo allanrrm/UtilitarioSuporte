@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace UtilitarioSuporte.Negocio
 {
@@ -81,6 +82,33 @@ namespace UtilitarioSuporte.Negocio
             DataTableSerie = dtab.Copy();
 
         }
+
+        public object VerificarNumeracaoSaltada(DataTable dataTableNotas) 
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Numero", typeof(int));
+            dt.Columns.Add("Serie", typeof(string));
+
+            for(int i = 0; i <= DataTableSerie.Rows.Count; i++)
+            {
+                var obj = dataTableNotas.AsEnumerable().Where(x => x.Field<string>("Serie") == i.ToString().PadLeft(3,'0'));
+
+                int numeroAtual = 0;
+
+                foreach (var drow in obj)
+                {
+                    if (drow.Field<int>("Numero") != (numeroAtual + 1) && numeroAtual != 0)
+                    {
+                        dt.Rows.Add(numeroAtual + 1, drow.Field<string>("Serie"));
+                    }
+                    numeroAtual = drow.Field<int>("Numero");
+                }
+            }
+            
+
+            return dt;
+        }
+
         public void CalcularValorXml(DataTable dataTableNotas, int tipo)
         {
             ValorTotalXml = (double)dataTableNotas.AsEnumerable().Select(s => s.Field<decimal>("valor")).Sum();

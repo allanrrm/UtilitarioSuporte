@@ -42,11 +42,13 @@
             this.lblContadorNotas = new System.Windows.Forms.Label();
             this.lblNumeroNotas = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSerie = new System.Windows.Forms.Label();
+            this.dataGridViewSerie = new System.Windows.Forms.DataGridView();
+            this.lblDivergente = new System.Windows.Forms.Label();
+            this.lblSaltados = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewDivergente = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewSaltados = new System.Windows.Forms.DataGridView();
             this.dataGridViewXml = new System.Windows.Forms.DataGridView();
             this.btnExtrair = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -54,15 +56,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxAno = new System.Windows.Forms.TextBox();
             this.comboBoxMes = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dataGridViewSerie = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSerie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDivergente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaltados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXml)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSerie)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -248,41 +248,69 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.lblSerie);
             this.panel2.Controls.Add(this.dataGridViewSerie);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.lblDivergente);
+            this.panel2.Controls.Add(this.lblSaltados);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.dataGridViewDivergente);
-            this.panel2.Controls.Add(this.dataGridView2);
+            this.panel2.Controls.Add(this.dataGridViewSaltados);
             this.panel2.Controls.Add(this.dataGridViewXml);
             this.panel2.Location = new System.Drawing.Point(12, 131);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(804, 490);
             this.panel2.TabIndex = 1;
             // 
-            // label4
+            // lblSerie
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(494, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 20);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Xml Divergente";
+            this.lblSerie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSerie.AutoSize = true;
+            this.lblSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSerie.Location = new System.Drawing.Point(16, 317);
+            this.lblSerie.Name = "lblSerie";
+            this.lblSerie.Size = new System.Drawing.Size(46, 20);
+            this.lblSerie.TabIndex = 7;
+            this.lblSerie.Text = "Serie";
+            this.lblSerie.Visible = false;
             // 
-            // label3
+            // dataGridViewSerie
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(256, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Numeros Saltados";
-            this.label3.Visible = false;
+            this.dataGridViewSerie.AllowUserToOrderColumns = true;
+            this.dataGridViewSerie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewSerie.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewSerie.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewSerie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSerie.Location = new System.Drawing.Point(18, 340);
+            this.dataGridViewSerie.Name = "dataGridViewSerie";
+            this.dataGridViewSerie.Size = new System.Drawing.Size(215, 136);
+            this.dataGridViewSerie.TabIndex = 6;
+            this.dataGridViewSerie.Visible = false;
+            // 
+            // lblDivergente
+            // 
+            this.lblDivergente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDivergente.AutoSize = true;
+            this.lblDivergente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDivergente.Location = new System.Drawing.Point(494, 16);
+            this.lblDivergente.Name = "lblDivergente";
+            this.lblDivergente.Size = new System.Drawing.Size(117, 20);
+            this.lblDivergente.TabIndex = 5;
+            this.lblDivergente.Text = "Xml Divergente";
+            this.lblDivergente.Visible = false;
+            // 
+            // lblSaltados
+            // 
+            this.lblSaltados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSaltados.AutoSize = true;
+            this.lblSaltados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaltados.Location = new System.Drawing.Point(256, 16);
+            this.lblSaltados.Name = "lblSaltados";
+            this.lblSaltados.Size = new System.Drawing.Size(140, 20);
+            this.lblSaltados.TabIndex = 4;
+            this.lblSaltados.Text = "Numeros Saltados";
+            this.lblSaltados.Visible = false;
             // 
             // label2
             // 
@@ -304,16 +332,17 @@
             this.dataGridViewDivergente.Name = "dataGridViewDivergente";
             this.dataGridViewDivergente.Size = new System.Drawing.Size(286, 254);
             this.dataGridViewDivergente.TabIndex = 2;
+            this.dataGridViewDivergente.Visible = false;
             // 
-            // dataGridView2
+            // dataGridViewSaltados
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(260, 39);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(213, 254);
-            this.dataGridView2.TabIndex = 1;
-            this.dataGridView2.Visible = false;
+            this.dataGridViewSaltados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewSaltados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSaltados.Location = new System.Drawing.Point(260, 39);
+            this.dataGridViewSaltados.Name = "dataGridViewSaltados";
+            this.dataGridViewSaltados.Size = new System.Drawing.Size(213, 254);
+            this.dataGridViewSaltados.TabIndex = 1;
+            this.dataGridViewSaltados.Visible = false;
             // 
             // dataGridViewXml
             // 
@@ -410,31 +439,6 @@
             this.comboBoxMes.Size = new System.Drawing.Size(88, 21);
             this.comboBoxMes.TabIndex = 0;
             // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 317);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 20);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Separas por Série";
-            // 
-            // dataGridViewSerie
-            // 
-            this.dataGridViewSerie.AllowUserToOrderColumns = true;
-            this.dataGridViewSerie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewSerie.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridViewSerie.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewSerie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSerie.Location = new System.Drawing.Point(18, 340);
-            this.dataGridViewSerie.Name = "dataGridViewSerie";
-            this.dataGridViewSerie.Size = new System.Drawing.Size(215, 136);
-            this.dataGridViewSerie.TabIndex = 6;
-            // 
             // FormXml
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,12 +455,12 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSerie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDivergente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaltados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewXml)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSerie)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -477,11 +481,11 @@
         private System.Windows.Forms.Label lblNumeroNotas;
         private System.Windows.Forms.Label lblValorXml;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblDivergente;
+        private System.Windows.Forms.Label lblSaltados;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridViewDivergente;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewSaltados;
         private System.Windows.Forms.DataGridView dataGridViewXml;
         private FontAwesome.Sharp.IconButton btnExtrair;
         private System.Windows.Forms.Panel panel3;
@@ -489,7 +493,7 @@
         private System.Windows.Forms.ComboBox comboBoxMes;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblSerie;
         private System.Windows.Forms.DataGridView dataGridViewSerie;
     }
 }

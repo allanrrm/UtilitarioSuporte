@@ -45,6 +45,8 @@ namespace UtilitarioSuporte.Forms
 
         private void btnExtrair_Click(object sender, EventArgs e)
         {
+            dataGridViewDivergente.Visible = true;
+            lblDivergente.Visible = true;
             comboBoxMes.Text = DateTime.Now.AddMonths(-1).ToString("MMMM");
             textBoxAno.Text = DateTime.Now.Year.ToString();
             DAO.ExtrairNotas(comboBoxMes.Text, textBoxAno.Text, tipo, notaXml);
@@ -52,12 +54,18 @@ namespace UtilitarioSuporte.Forms
             notaXml.CalcularValorXml(notaXml.DataTableNotasXml, tipo);
             if (tipo == 2)
             {
+                dataGridViewSerie.Visible = true;
+                lblSerie.Visible = true;
+                dataGridViewSaltados.Visible = true;
+                lblSaltados.Visible = true;
                 notaXml.AgruparValorPorSerie(notaXml.DataTableNotas);
                 dataGridViewSerie.DataSource = notaXml.DataTableSerie;
+                dataGridViewSaltados.DataSource = notaXml.VerificarNumeracaoSaltada(notaXml.DataTableNotas);
             }
 
             lblValorXml.Text = notaXml.ValorTotalXml.ToString();
             dataGridViewDivergente.DataSource = Funcoes.DiferencaDataTables(notaXml.DataTableNotas, notaXml.DataTableNotasXml, tipo);
+
 
         }
     }

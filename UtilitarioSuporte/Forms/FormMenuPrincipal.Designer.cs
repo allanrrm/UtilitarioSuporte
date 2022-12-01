@@ -69,7 +69,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(180, 761);
+            this.panelMenu.Size = new System.Drawing.Size(180, 561);
             this.panelMenu.TabIndex = 1;
             // 
             // btnFechar
@@ -83,7 +83,7 @@
             this.btnFechar.IconColor = System.Drawing.Color.Gainsboro;
             this.btnFechar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnFechar.IconSize = 32;
-            this.btnFechar.Location = new System.Drawing.Point(0, 716);
+            this.btnFechar.Location = new System.Drawing.Point(0, 516);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(180, 45);
             this.btnFechar.TabIndex = 5;
@@ -369,7 +369,7 @@
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(180, 98);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(828, 663);
+            this.panelDesktop.Size = new System.Drawing.Size(828, 463);
             this.panelDesktop.TabIndex = 6;
             // 
             // FormMenuPrincipal
@@ -377,7 +377,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1008, 761);
+            this.ClientSize = new System.Drawing.Size(1008, 561);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);

@@ -44,6 +44,10 @@ namespace UtilitarioSuporte.Negocio
         {
             try
             {
+                if (File.Exists(Environment.CurrentDirectory + @"\conexao.txt"))
+                {
+                    File.Delete(Environment.CurrentDirectory + @"\conexao.txt");
+                }
                 using (FileStream fileStream = new FileStream(Environment.CurrentDirectory + @"\conexao.txt", FileMode.OpenOrCreate))
                 {
                     using (Aes aes = Aes.Create())
