@@ -16,7 +16,7 @@ namespace UtilitarioSuporte.DataAccess
         }
 
 
-        public static NpgsqlCommand CmdConsultarNotasNFe(NpgsqlConnection conn, string mes, string ano, int tipo, string idEmpresa)
+        public static NpgsqlCommand CmdConsultarNotasNFe(NpgsqlConnection conn, string mes, string ano, int tipo, string idEmpresa) //Alterar nome do método
         {
             DateTime datainicial = DateTime.Parse("1." + mes + ano);
             DateTime datafinal = (datainicial.AddMonths(1).AddDays(-1).AddHours(23).AddMinutes(59).AddSeconds(59));

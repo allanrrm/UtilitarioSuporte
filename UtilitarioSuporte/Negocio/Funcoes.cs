@@ -1,21 +1,16 @@
-﻿using DataAccess;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using System.Windows;
-using Npgsql;
-using System.Security.Cryptography;
 using System.Data;
-using UtilitarioSuporte.DataAccess;
-using System.Xml;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Windows;
 
 namespace UtilitarioSuporte.Negocio
 {
     public static class Funcoes
-    {       
+    {
         public static List<string> DescriptografarStringConexao()
         {
             List<string> descriptografar = new List<string>();
@@ -25,6 +20,20 @@ namespace UtilitarioSuporte.Negocio
             descriptografar.Add(infoConf[0]);
             descriptografar.Add(infoConf[1]);
             return descriptografar;
+        }
+
+        public static bool VerificarConexaoExistente()
+        {
+            bool ativo;
+            if (File.Exists(Environment.CurrentDirectory + @"\conexao.txt"))
+            {
+                ativo = true;
+            }
+            else
+            {
+                ativo = false;
+            }
+            return ativo;
         }
 
         public static string MontaStringConexao(string servidor, string porta, string baseDados, string usuario, string senha)
@@ -69,7 +78,7 @@ namespace UtilitarioSuporte.Negocio
                         {
                             using (StreamWriter encryptWriter = new StreamWriter(cryptoStream))
                             {
-                                encryptWriter.WriteLine(conexao+"|"+idEmpresa);
+                                encryptWriter.WriteLine(conexao + "|" + idEmpresa);
                             }
                         }
                     }
@@ -115,8 +124,8 @@ namespace UtilitarioSuporte.Negocio
                         {
                             using (StreamReader decryptReader = new StreamReader(cryptoStream))
                             {
-                               string decryptedMessage =  decryptReader.ReadToEnd();
-                               return decryptedMessage;
+                                string decryptedMessage = decryptReader.ReadToEnd();
+                                return decryptedMessage;
                             }
 
                         }
@@ -138,70 +147,107 @@ namespace UtilitarioSuporte.Negocio
             return mesExtenso;
         }
 
-        public static DataTable DiferencaDataTables(DataTable dtNfceLoja, DataTable dtNfceCaixa, int tipo)
+        public static DataTable DiferencaDataTables(DataTable dataTableNotasBanco, DataTable dataTableNotasXml, int tipo)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Numero", typeof(int));
-            dt.Columns.Add("ValorTotal", typeof(decimal));
-
-            foreach (DataRow dr in dtNfceLoja.Rows)
+            DataTable dataTableNotasSemCanceladas = new DataTable();
+            IEnumerable<DataRow> dataRowNotasSemCanceladas = dataTableNotasBanco.AsEnumerable().Where(x => x.Field<object>("xml") != null && x.Field<bool>("cancelado") == false);
+            if(dataRowNotasSemCanceladas.Count() == 0)
             {
-                if(tipo == 2)
-                    dt.Rows.Add(new object[] {dr["Numero"],dr["ValorTotal"]});
+                return dataTableNotasSemCanceladas;
+            }
+            dataTableNotasSemCanceladas = dataRowNotasSemCanceladas.CopyToDataTable();
+            DataTable dtResultadoDiferenca = new DataTable();
+            dtResultadoDiferenca.Columns.Add("Numero", typeof(int));
+            dtResultadoDiferenca.Columns.Add("ValorTotal", typeof(decimal));
+            dtResultadoDiferenca.Columns.Add("Motivo", typeof(string));
+
+            foreach (DataRow dr in dataTableNotasSemCanceladas.Rows)
+            {
+                var dtRowNotaXml = dataTableNotasXml.AsEnumerable().FirstOrDefault(x => x.Field<int>("Numero") == Convert.ToInt32(dr["Numero"]));
+                if (dtRowNotaXml == null)
+                {
+                    if (tipo == 2)
+                    {
+                        dtResultadoDiferenca.Rows.Add(new object[] { dr["Numero"], dr["ValorTotal"], "Não Existe XML" });
+                    }
+                    else
+                    {
+                        dtResultadoDiferenca.Rows.Add(new object[] { dr["Numero"], dr["Total"], "Não Existe XML" });
+                    }
+                }
                 else
                 {
-                    dt.Rows.Add(new object[] { dr["Numero"], dr["Total"] });
+                    var campoValor = Convert.ToDecimal(tipo == 2 ? dr["ValorTotal"] : dr["Total"]);
+                    if (campoValor != Convert.ToDecimal(dtRowNotaXml["valor"]))
+                    {
+                        dtResultadoDiferenca.Rows.Add(new object[] { dtRowNotaXml["numero"], dtRowNotaXml["valor"], "Valor Divergente" });
+                    }
                 }
             }
+            return dtResultadoDiferenca;
 
-            DataTable Resultado = new DataTable("ResultDataTable");
+            //DataTable dt = new DataTable();
+            //dt.Columns.Add("Numero", typeof(int));
+            //dt.Columns.Add("ValorTotal", typeof(decimal));
 
-            using (DataSet ds = new DataSet())
-            {
-                ds.Tables.AddRange(new DataTable[] { dt.Copy(), dtNfceCaixa.Copy() });
+            //foreach (DataRow dr in dataTableNotasBanco.Rows)
+            //{
+            //    if (tipo == 2)
+            //        dt.Rows.Add(new object[] { dr["Numero"], dr["ValorTotal"] });
+            //    else
+            //    {
+            //        dt.Rows.Add(new object[] { dr["Numero"], dr["Total"] });
+            //    }
+            //}
 
-                DataColumn[] firstColumns = new DataColumn[ds.Tables[0].Columns.Count];
-                for (int i = 0; i < firstColumns.Length; i++)
-                {
-                    firstColumns[i] = ds.Tables[0].Columns[i];
-                }
+            //DataTable Resultado = new DataTable("ResultDataTable");
 
-                DataColumn[] secondColumns = new DataColumn[ds.Tables[1].Columns.Count];
-                for (int i = 0; i < secondColumns.Length; i++)
-                {
-                    secondColumns[i] = ds.Tables[1].Columns[i];
-                }
+            //using (DataSet ds = new DataSet())
+            //{
+            //    ds.Tables.AddRange(new DataTable[] { dt.Copy(), dataTableNotasXml.Copy() });
 
-                DataRelation r1 = new DataRelation(string.Empty, firstColumns, secondColumns, false);
-                ds.Relations.Add(r1);
+            //    DataColumn[] firstColumns = new DataColumn[ds.Tables[0].Columns.Count];
+            //    for (int i = 0; i < firstColumns.Length; i++)
+            //    {
+            //        firstColumns[i] = ds.Tables[0].Columns[i];
+            //    }
 
-                DataRelation r2 = new DataRelation(string.Empty, secondColumns, firstColumns, false);
-                ds.Relations.Add(r2);
+            //    DataColumn[] secondColumns = new DataColumn[ds.Tables[1].Columns.Count];
+            //    for (int i = 0; i < secondColumns.Length; i++)
+            //    {
+            //        secondColumns[i] = ds.Tables[1].Columns[i];
+            //    }
 
-                for (int i = 0; i < dt.Columns.Count; i++)
-                {
-                    Resultado.Columns.Add(dt.Columns[i].ColumnName, dt.Columns[i].DataType);
-                }
-                ////If FirstDataTable Row not in SecondDataTable, Add to ResultDataTable.  
-                //Resultado.BeginLoadData();
-                //foreach (DataRow parentrow in ds.Tables[0].Rows)
-                //{
-                //    DataRow[] childrows = parentrow.GetChildRows(r1);
-                //    if (childrows == null || childrows.Length == 0)
-                //        Resultado.LoadDataRow(parentrow.ItemArray, true);
-                //}
+            //    DataRelation r1 = new DataRelation(string.Empty, firstColumns, secondColumns, false);
+            //    ds.Relations.Add(r1);
 
-                //If SecondDataTable Row not in FirstDataTable, Add to ResultDataTable.  
-                foreach (DataRow parentrow in ds.Tables[1].Rows)
-                {
-                    DataRow[] childrows = parentrow.GetChildRows(r2);
-                    if (childrows == null || childrows.Length == 0)
-                        Resultado.LoadDataRow(parentrow.ItemArray, true);
-                }
-                Resultado.EndLoadData();
-            }
+            //    DataRelation r2 = new DataRelation(string.Empty, secondColumns, firstColumns, false);
+            //    ds.Relations.Add(r2);
 
-            return Resultado;
+            //    for (int i = 0; i < dt.Columns.Count; i++)
+            //    {
+            //        Resultado.Columns.Add(dt.Columns[i].ColumnName, dt.Columns[i].DataType);
+            //    }
+            //    ////If FirstDataTable Row not in SecondDataTable, Add to ResultDataTable.  
+            //    //Resultado.BeginLoadData();
+            //    //foreach (DataRow parentrow in ds.Tables[0].Rows)
+            //    //{
+            //    //    DataRow[] childrows = parentrow.GetChildRows(r1);
+            //    //    if (childrows == null || childrows.Length == 0)
+            //    //        Resultado.LoadDataRow(parentrow.ItemArray, true);
+            //    //}
+
+            //    //If SecondDataTable Row not in FirstDataTable, Add to ResultDataTable.  
+            //    foreach (DataRow parentrow in ds.Tables[1].Rows)
+            //    {
+            //        DataRow[] childrows = parentrow.GetChildRows(r2);
+            //        if (childrows == null || childrows.Length == 0)
+            //            Resultado.LoadDataRow(parentrow.ItemArray, true);
+            //    }
+            //    Resultado.EndLoadData();
+            //}
+
+            //return Resultado;
         }
 
 

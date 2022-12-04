@@ -119,6 +119,7 @@
             // btnExterno
             // 
             this.btnExterno.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExterno.Enabled = false;
             this.btnExterno.FlatAppearance.BorderSize = 0;
             this.btnExterno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExterno.ForeColor = System.Drawing.Color.Gainsboro;
@@ -141,6 +142,7 @@
             // btnRestaurar
             // 
             this.btnRestaurar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRestaurar.Enabled = false;
             this.btnRestaurar.FlatAppearance.BorderSize = 0;
             this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestaurar.ForeColor = System.Drawing.Color.Gainsboro;
@@ -366,7 +368,9 @@
             // 
             // panelDesktop
             // 
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.Location = new System.Drawing.Point(180, 98);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(828, 463);
@@ -385,6 +389,7 @@
             this.Name = "FormMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.panelSubMenuXml.ResumeLayout(false);

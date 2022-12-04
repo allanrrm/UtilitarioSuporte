@@ -50,7 +50,6 @@
             this.dataGridViewDivergente = new System.Windows.Forms.DataGridView();
             this.dataGridViewSaltados = new System.Windows.Forms.DataGridView();
             this.dataGridViewXml = new System.Windows.Forms.DataGridView();
-            this.btnExtrair = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -85,7 +84,7 @@
             this.panel1.Controls.Add(this.lblNumeroNotas);
             this.panel1.Location = new System.Drawing.Point(239, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(577, 100);
+            this.panel1.Size = new System.Drawing.Size(693, 100);
             this.panel1.TabIndex = 0;
             // 
             // lblValorXml
@@ -94,7 +93,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblValorXml.AutoSize = true;
             this.lblValorXml.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorXml.Location = new System.Drawing.Point(592, 72);
+            this.lblValorXml.Location = new System.Drawing.Point(548, 72);
             this.lblValorXml.Name = "lblValorXml";
             this.lblValorXml.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblValorXml.Size = new System.Drawing.Size(11, 16);
@@ -108,7 +107,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblValorAutorizadas.AutoSize = true;
             this.lblValorAutorizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorAutorizadas.Location = new System.Drawing.Point(592, 11);
+            this.lblValorAutorizadas.Location = new System.Drawing.Point(548, 11);
             this.lblValorAutorizadas.Name = "lblValorAutorizadas";
             this.lblValorAutorizadas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblValorAutorizadas.Size = new System.Drawing.Size(11, 16);
@@ -122,7 +121,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(379, 72);
+            this.label1.Location = new System.Drawing.Point(335, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 16);
             this.label1.TabIndex = 3;
@@ -134,7 +133,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblValorA.AutoSize = true;
             this.lblValorA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorA.Location = new System.Drawing.Point(405, 11);
+            this.lblValorA.Location = new System.Drawing.Point(361, 11);
             this.lblValorA.Name = "lblValorA";
             this.lblValorA.Size = new System.Drawing.Size(181, 16);
             this.lblValorA.TabIndex = 2;
@@ -146,7 +145,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContadorNotasXml.AutoSize = true;
             this.lblContadorNotasXml.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContadorNotasXml.Location = new System.Drawing.Point(293, 72);
+            this.lblContadorNotasXml.Location = new System.Drawing.Point(256, 72);
             this.lblContadorNotasXml.Name = "lblContadorNotasXml";
             this.lblContadorNotasXml.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblContadorNotasXml.Size = new System.Drawing.Size(11, 16);
@@ -160,7 +159,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContadorCanceladas.AutoSize = true;
             this.lblContadorCanceladas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContadorCanceladas.Location = new System.Drawing.Point(293, 41);
+            this.lblContadorCanceladas.Location = new System.Drawing.Point(256, 41);
             this.lblContadorCanceladas.Name = "lblContadorCanceladas";
             this.lblContadorCanceladas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblContadorCanceladas.Size = new System.Drawing.Size(11, 16);
@@ -174,7 +173,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContadorAutorizadas.AutoSize = true;
             this.lblContadorAutorizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContadorAutorizadas.Location = new System.Drawing.Point(293, 11);
+            this.lblContadorAutorizadas.Location = new System.Drawing.Point(256, 11);
             this.lblContadorAutorizadas.Name = "lblContadorAutorizadas";
             this.lblContadorAutorizadas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblContadorAutorizadas.Size = new System.Drawing.Size(11, 16);
@@ -188,7 +187,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNotasXml.AutoSize = true;
             this.lblNotasXml.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotasXml.Location = new System.Drawing.Point(183, 72);
+            this.lblNotasXml.Location = new System.Drawing.Point(146, 72);
             this.lblNotasXml.Name = "lblNotasXml";
             this.lblNotasXml.Size = new System.Drawing.Size(104, 16);
             this.lblNotasXml.TabIndex = 3;
@@ -200,7 +199,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCanceladas.AutoSize = true;
             this.lblCanceladas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCanceladas.Location = new System.Drawing.Point(204, 42);
+            this.lblCanceladas.Location = new System.Drawing.Point(167, 42);
             this.lblCanceladas.Name = "lblCanceladas";
             this.lblCanceladas.Size = new System.Drawing.Size(83, 16);
             this.lblCanceladas.TabIndex = 2;
@@ -212,7 +211,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAutorizadas.AutoSize = true;
             this.lblAutorizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAutorizadas.Location = new System.Drawing.Point(206, 11);
+            this.lblAutorizadas.Location = new System.Drawing.Point(169, 11);
             this.lblAutorizadas.Name = "lblAutorizadas";
             this.lblAutorizadas.Size = new System.Drawing.Size(81, 16);
             this.lblAutorizadas.TabIndex = 1;
@@ -258,7 +257,7 @@
             this.panel2.Controls.Add(this.dataGridViewXml);
             this.panel2.Location = new System.Drawing.Point(12, 131);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(804, 490);
+            this.panel2.Size = new System.Drawing.Size(920, 490);
             this.panel2.TabIndex = 1;
             // 
             // lblSerie
@@ -284,7 +283,7 @@
             this.dataGridViewSerie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSerie.Location = new System.Drawing.Point(18, 340);
             this.dataGridViewSerie.Name = "dataGridViewSerie";
-            this.dataGridViewSerie.Size = new System.Drawing.Size(215, 136);
+            this.dataGridViewSerie.Size = new System.Drawing.Size(331, 136);
             this.dataGridViewSerie.TabIndex = 6;
             this.dataGridViewSerie.Visible = false;
             // 
@@ -293,7 +292,7 @@
             this.lblDivergente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDivergente.AutoSize = true;
             this.lblDivergente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDivergente.Location = new System.Drawing.Point(494, 16);
+            this.lblDivergente.Location = new System.Drawing.Point(610, 16);
             this.lblDivergente.Name = "lblDivergente";
             this.lblDivergente.Size = new System.Drawing.Size(117, 20);
             this.lblDivergente.TabIndex = 5;
@@ -305,7 +304,7 @@
             this.lblSaltados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSaltados.AutoSize = true;
             this.lblSaltados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaltados.Location = new System.Drawing.Point(256, 16);
+            this.lblSaltados.Location = new System.Drawing.Point(372, 16);
             this.lblSaltados.Name = "lblSaltados";
             this.lblSaltados.Size = new System.Drawing.Size(140, 20);
             this.lblSaltados.TabIndex = 4;
@@ -328,7 +327,7 @@
             // 
             this.dataGridViewDivergente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewDivergente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDivergente.Location = new System.Drawing.Point(498, 39);
+            this.dataGridViewDivergente.Location = new System.Drawing.Point(614, 39);
             this.dataGridViewDivergente.Name = "dataGridViewDivergente";
             this.dataGridViewDivergente.Size = new System.Drawing.Size(286, 254);
             this.dataGridViewDivergente.TabIndex = 2;
@@ -338,7 +337,7 @@
             // 
             this.dataGridViewSaltados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewSaltados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSaltados.Location = new System.Drawing.Point(260, 39);
+            this.dataGridViewSaltados.Location = new System.Drawing.Point(376, 39);
             this.dataGridViewSaltados.Name = "dataGridViewSaltados";
             this.dataGridViewSaltados.Size = new System.Drawing.Size(213, 254);
             this.dataGridViewSaltados.TabIndex = 1;
@@ -354,26 +353,8 @@
             this.dataGridViewXml.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewXml.Location = new System.Drawing.Point(18, 39);
             this.dataGridViewXml.Name = "dataGridViewXml";
-            this.dataGridViewXml.Size = new System.Drawing.Size(215, 254);
+            this.dataGridViewXml.Size = new System.Drawing.Size(331, 254);
             this.dataGridViewXml.TabIndex = 0;
-            // 
-            // btnExtrair
-            // 
-            this.btnExtrair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
-            this.btnExtrair.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnExtrair.FlatAppearance.BorderSize = 0;
-            this.btnExtrair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExtrair.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnExtrair.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnExtrair.IconColor = System.Drawing.Color.Black;
-            this.btnExtrair.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExtrair.Location = new System.Drawing.Point(0, 627);
-            this.btnExtrair.Name = "btnExtrair";
-            this.btnExtrair.Size = new System.Drawing.Size(828, 42);
-            this.btnExtrair.TabIndex = 2;
-            this.btnExtrair.Text = "Extrair";
-            this.btnExtrair.UseVisualStyleBackColor = false;
-            this.btnExtrair.Click += new System.EventHandler(this.btnExtrair_Click);
             // 
             // panel3
             // 
@@ -444,9 +425,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(828, 669);
+            this.ClientSize = new System.Drawing.Size(944, 669);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.btnExtrair);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FormXml";
@@ -487,7 +467,6 @@
         private System.Windows.Forms.DataGridView dataGridViewDivergente;
         private System.Windows.Forms.DataGridView dataGridViewSaltados;
         private System.Windows.Forms.DataGridView dataGridViewXml;
-        private FontAwesome.Sharp.IconButton btnExtrair;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox textBoxAno;
         private System.Windows.Forms.ComboBox comboBoxMes;

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using DataAccess;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UtilitarioSuporte.Negocio;
 
@@ -28,8 +23,8 @@ namespace UtilitarioSuporte.Forms
 
         private void ExecutarFiltroNotas(string mes, string ano, int tipo)
         {
-            DataTable notasDataTable = DAO.PreencherFormularioDataTable(mes, ano, tipo);
-            notaXml = DAO.PreencherFormulario(notasDataTable, tipo);
+            DataTable notasDataTable = Conexao.PreencherFormularioDataTable(mes, ano, tipo);
+            notaXml = Negocio.Negocio.PreencherFormulario(notasDataTable, tipo);
             notasDataTable.Columns.Remove("xml");
             if (tipo == 2)
             {
@@ -41,18 +36,14 @@ namespace UtilitarioSuporte.Forms
             lblContadorCanceladas.Text = notaXml.Canceladas.ToString();
             lblValorAutorizadas.Text = notaXml.ValorTotal.ToString();
             lblContadorNotasXml.Text = notaXml.NotasComXml.ToString();
-        }
-
-        private void btnExtrair_Click(object sender, EventArgs e)
-        {
             dataGridViewDivergente.Visible = true;
             lblDivergente.Visible = true;
             comboBoxMes.Text = DateTime.Now.AddMonths(-1).ToString("MMMM");
             textBoxAno.Text = DateTime.Now.Year.ToString();
-            DAO.ExtrairNotas(comboBoxMes.Text, textBoxAno.Text, tipo, notaXml);
-            notaXml.DataTableNotasXml = DAO.CapturarInformacoesXml(tipo);
+            Negocio.Negocio.ExtrairNotas(comboBoxMes.Text, textBoxAno.Text, tipo, notaXml);
+            notaXml.DataTableNotasXml = Negocio.Negocio.CapturarInformacoesXml(tipo, mes);
             notaXml.CalcularValorXml(notaXml.DataTableNotasXml, tipo);
-            if (tipo == 2)
+            if (tipo == 2 || tipo == 1)
             {
                 dataGridViewSerie.Visible = true;
                 lblSerie.Visible = true;
@@ -66,7 +57,7 @@ namespace UtilitarioSuporte.Forms
             lblValorXml.Text = notaXml.ValorTotalXml.ToString();
             dataGridViewDivergente.DataSource = Funcoes.DiferencaDataTables(notaXml.DataTableNotas, notaXml.DataTableNotasXml, tipo);
 
-
         }
+
     }
 }

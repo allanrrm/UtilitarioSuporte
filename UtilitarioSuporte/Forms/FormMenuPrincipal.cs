@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -22,10 +23,23 @@ namespace UtilitarioSuporte
         {
             InitializeComponent();
             DesignCustomizado();
+            VerificacaoInicial();
         }
-
-        private void DesignCustomizado()
+        private void VerificacaoInicial()
         {
+            bool ativo = false;
+
+            if (File.Exists(Environment.CurrentDirectory + @"\conexao.txt"))
+            {          
+                return;
+            }
+            else
+            {
+                OpenChildForm(new FormConexao());
+            }
+        }
+        private void DesignCustomizado()
+        {          
             panelSubMenuXml.Visible = false;
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
@@ -37,7 +51,6 @@ namespace UtilitarioSuporte
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.MinimumSize = new Size(1366, 768);
         }
-
         private void EsconderSubMenu()
         {
             if(panelSubMenuXml.Visible = true)
@@ -45,7 +58,6 @@ namespace UtilitarioSuporte
                 panelSubMenuXml.Visible = false;
             }
         }
-
         private void MostrarSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
@@ -56,10 +68,6 @@ namespace UtilitarioSuporte
             else
                 subMenu.Visible = false;
         }
-
-
-
-
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(94, 181, 247);
@@ -70,7 +78,6 @@ namespace UtilitarioSuporte
             public static Color color6 = Color.FromArgb(24, 161, 251);
             public static Color color7 = Color.FromArgb(240, 240, 240);
         }
-
         //Metodos
         private void ActivateButton(object senderBtn, Color color)
         {
@@ -95,7 +102,6 @@ namespace UtilitarioSuporte
 
             }
         }
-
         private void DisabeButton()
         {
             if (currentBtn != null)
@@ -108,8 +114,7 @@ namespace UtilitarioSuporte
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-
-        private void OpenChildForm(Form childForm)
+        private bool OpenChildForm(Form childForm)
         {
             if(currentChildForm != null)
             {
@@ -125,9 +130,9 @@ namespace UtilitarioSuporte
             childForm.BringToFront();
             childForm.Show();
             lblTitleChildForm.Text = childForm.Text;
+            return true;
 
         }
-
         private void btnXml_Click(object sender, EventArgs e)
         {
 
@@ -136,7 +141,6 @@ namespace UtilitarioSuporte
             MostrarSubMenu(panelSubMenuXml);
             //OpenChildForm(new FormExtrairXml());
         }
-
         private void btnEntrada_Click(object sender, EventArgs e)
         {
 
@@ -146,33 +150,27 @@ namespace UtilitarioSuporte
         {
             OpenChildForm(new FormXml(1));
         }
-
         private void btnNFCe_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormXml(2));
         }
-
         private void btnRecuperarBase_Click(object sender, EventArgs e)
         {
             EsconderSubMenu();
             ActivateButton(sender, RGBColors.color1);           
         }
-
         private void btnExterno_Click(object sender, EventArgs e)
         {
             EsconderSubMenu();
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormExterno());
         }
-
         private void btnConexao_Click(object sender, EventArgs e)
         {
             EsconderSubMenu();
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new FormConexao());
         }
-
-
         private void Reset()
         {
             DisabeButton();
@@ -181,27 +179,21 @@ namespace UtilitarioSuporte
             iconCurrentChildForm.IconColor = Color.Gainsboro;
             lblTitleChildForm.Text = "Iniciar";
         }
-
         private void pictureHome_Click(object sender, EventArgs e)
         {
             currentChildForm.Close();
             Reset();
         }
-
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-
-
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
         private void btnMaximize_Click(object sender, EventArgs e)
         {
             if(WindowState == FormWindowState.Normal)
@@ -209,29 +201,22 @@ namespace UtilitarioSuporte
             else
                 WindowState = FormWindowState.Normal;
         }
-
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
-
-
         private void btnFechar_MouseMove(object sender, MouseEventArgs e)
         {
             btnFechar.BackColor = Color.Red;
 
         }
-
         private void btnFechar_MouseLeave(object sender, EventArgs e)
         {
             btnFechar.BackColor= Color.FromArgb(41, 58, 76);
         }
-
         private void btnFechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-
     }
 }

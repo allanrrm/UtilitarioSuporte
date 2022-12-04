@@ -48,6 +48,7 @@
             this.btnConectar = new FontAwesome.Sharp.IconButton();
             this.btnSalvar = new FontAwesome.Sharp.IconButton();
             this.panelBotoesConexao = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -62,6 +63,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(828, 663);
@@ -69,9 +71,9 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             this.panel3.Controls.Add(this.label1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(828, 46);
@@ -79,14 +81,17 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(271, 9);
+            this.label1.Location = new System.Drawing.Point(369, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 20);
             this.label1.TabIndex = 27;
             this.label1.Text = "Configurações";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -104,15 +109,15 @@
             this.panel2.Controls.Add(this.textBoxUsuario);
             this.panel2.Controls.Add(this.lblSenha);
             this.panel2.Controls.Add(this.lblPorta);
-            this.panel2.Location = new System.Drawing.Point(12, 84);
+            this.panel2.Location = new System.Drawing.Point(0, 84);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(804, 175);
+            this.panel2.Size = new System.Drawing.Size(828, 175);
             this.panel2.TabIndex = 26;
             // 
             // comboBoxEmpresa
             // 
             this.comboBoxEmpresa.FormattingEnabled = true;
-            this.comboBoxEmpresa.Location = new System.Drawing.Point(294, 128);
+            this.comboBoxEmpresa.Location = new System.Drawing.Point(381, 132);
             this.comboBoxEmpresa.Name = "comboBoxEmpresa";
             this.comboBoxEmpresa.Size = new System.Drawing.Size(330, 21);
             this.comboBoxEmpresa.TabIndex = 25;
@@ -125,7 +130,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(30, 16);
+            this.label2.Location = new System.Drawing.Point(117, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 20);
             this.label2.TabIndex = 23;
@@ -139,7 +144,7 @@
             this.lblEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             this.lblEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblEmpresa.Location = new System.Drawing.Point(291, 110);
+            this.lblEmpresa.Location = new System.Drawing.Point(378, 114);
             this.lblEmpresa.Name = "lblEmpresa";
             this.lblEmpresa.Size = new System.Drawing.Size(64, 17);
             this.lblEmpresa.TabIndex = 24;
@@ -153,7 +158,7 @@
             this.lblBaseDados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             this.lblBaseDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBaseDados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblBaseDados.Location = new System.Drawing.Point(163, 57);
+            this.lblBaseDados.Location = new System.Drawing.Point(250, 61);
             this.lblBaseDados.Name = "lblBaseDados";
             this.lblBaseDados.Size = new System.Drawing.Size(105, 17);
             this.lblBaseDados.TabIndex = 13;
@@ -163,7 +168,7 @@
             // 
             this.textBoxBaseDados.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBoxBaseDados.Location = new System.Drawing.Point(166, 76);
+            this.textBoxBaseDados.Location = new System.Drawing.Point(253, 80);
             this.textBoxBaseDados.Name = "textBoxBaseDados";
             this.textBoxBaseDados.Size = new System.Drawing.Size(100, 20);
             this.textBoxBaseDados.TabIndex = 14;
@@ -177,7 +182,7 @@
             this.lbliP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             this.lbliP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbliP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbliP.Location = new System.Drawing.Point(31, 57);
+            this.lbliP.Location = new System.Drawing.Point(118, 61);
             this.lbliP.Name = "lbliP";
             this.lbliP.Size = new System.Drawing.Size(96, 17);
             this.lbliP.TabIndex = 11;
@@ -191,7 +196,7 @@
             this.lblUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblUsuario.Location = new System.Drawing.Point(31, 110);
+            this.lblUsuario.Location = new System.Drawing.Point(118, 114);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(57, 17);
             this.lblUsuario.TabIndex = 15;
@@ -201,7 +206,7 @@
             // 
             this.textBoxSenha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBoxSenha.Location = new System.Drawing.Point(166, 130);
+            this.textBoxSenha.Location = new System.Drawing.Point(253, 134);
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(100, 20);
             this.textBoxSenha.TabIndex = 20;
@@ -212,7 +217,7 @@
             // 
             this.textBoxPorta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBoxPorta.Location = new System.Drawing.Point(294, 77);
+            this.textBoxPorta.Location = new System.Drawing.Point(381, 81);
             this.textBoxPorta.Name = "textBoxPorta";
             this.textBoxPorta.Size = new System.Drawing.Size(100, 20);
             this.textBoxPorta.TabIndex = 18;
@@ -222,7 +227,7 @@
             // 
             this.textBoxIpServidor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBoxIpServidor.Location = new System.Drawing.Point(34, 77);
+            this.textBoxIpServidor.Location = new System.Drawing.Point(121, 81);
             this.textBoxIpServidor.Name = "textBoxIpServidor";
             this.textBoxIpServidor.Size = new System.Drawing.Size(100, 20);
             this.textBoxIpServidor.TabIndex = 12;
@@ -232,7 +237,7 @@
             // 
             this.textBoxUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBoxUsuario.Location = new System.Drawing.Point(34, 130);
+            this.textBoxUsuario.Location = new System.Drawing.Point(121, 134);
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(100, 20);
             this.textBoxUsuario.TabIndex = 16;
@@ -246,7 +251,7 @@
             this.lblSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblSenha.Location = new System.Drawing.Point(163, 110);
+            this.lblSenha.Location = new System.Drawing.Point(250, 114);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(49, 17);
             this.lblSenha.TabIndex = 19;
@@ -260,7 +265,7 @@
             this.lblPorta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             this.lblPorta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblPorta.Location = new System.Drawing.Point(291, 57);
+            this.lblPorta.Location = new System.Drawing.Point(378, 61);
             this.lblPorta.Name = "lblPorta";
             this.lblPorta.Size = new System.Drawing.Size(42, 17);
             this.lblPorta.TabIndex = 17;
@@ -323,6 +328,16 @@
             this.panelBotoesConexao.Size = new System.Drawing.Size(828, 80);
             this.panelBotoesConexao.TabIndex = 26;
             // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(828, 669);
+            this.panel4.TabIndex = 29;
+            // 
             // FormConexao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,5 +379,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

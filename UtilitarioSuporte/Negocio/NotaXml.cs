@@ -83,7 +83,7 @@ namespace UtilitarioSuporte.Negocio
 
         }
 
-        public object VerificarNumeracaoSaltada(DataTable dataTableNotas) 
+        public DataTable VerificarNumeracaoSaltada(DataTable dataTableNotas) 
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("Numero", typeof(int));
