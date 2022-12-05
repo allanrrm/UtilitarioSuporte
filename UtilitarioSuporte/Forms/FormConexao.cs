@@ -40,5 +40,6 @@ namespace UtilitarioSuporte
             Conexao.SalvarConfiguracaoBaseDados(textBoxIpServidor.Text, textBoxPorta.Text, textBoxBaseDados.Text, textBoxUsuario.Text, textBoxSenha.Text, idEmpresa);
             Close();
         }
+
     }
 }

@@ -38,8 +38,6 @@ namespace UtilitarioSuporte.Forms
             lblContadorNotasXml.Text = notaXml.NotasComXml.ToString();
             dataGridViewDivergente.Visible = true;
             lblDivergente.Visible = true;
-            comboBoxMes.Text = DateTime.Now.AddMonths(-1).ToString("MMMM");
-            textBoxAno.Text = DateTime.Now.Year.ToString();
             Negocio.Negocio.ExtrairNotas(comboBoxMes.Text, textBoxAno.Text, tipo, notaXml);
             notaXml.DataTableNotasXml = Negocio.Negocio.CapturarInformacoesXml(tipo, mes);
             notaXml.CalcularValorXml(notaXml.DataTableNotasXml, tipo);
@@ -59,5 +57,9 @@ namespace UtilitarioSuporte.Forms
 
         }
 
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            ExecutarFiltroNotas(comboBoxMes.Text, textBoxAno.Text, tipo);
+        }
     }
 }
