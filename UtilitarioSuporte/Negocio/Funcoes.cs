@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Windows;
+using System.Windows.Forms;
 
 namespace UtilitarioSuporte.Negocio
 {
@@ -83,11 +84,11 @@ namespace UtilitarioSuporte.Negocio
                         }
                     }
                 }
-                MessageBox.Show("Configuração Salva com sucesso", "Aviso", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Configuração Salva com sucesso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {
-                MessageBox.Show("Conexão não foi salva, contate o administrador", "Aviso", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Conexão não foi salva, contate o administrador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -248,6 +249,25 @@ namespace UtilitarioSuporte.Negocio
             //}
 
             //return Resultado;
+        }
+
+        public static void AbrirPastaSintegra()
+        {
+            if (MessageBox.Show("Gostaria de Abrir a Pasta do Sintegra?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string caminhoPasta = @"C:\Autocom\Sintegra\";
+                if (Directory.Exists(caminhoPasta))
+                {
+                    Process.Start("Explorer", caminhoPasta);
+                }
+                else if (
+                    MessageBox.Show("Pasta sintegra não existe, deseja cria-la?", "Diretório Não Existente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Directory.CreateDirectory(caminhoPasta);
+                    Process.Start("Explorer", caminhoPasta);
+                }
+            }
+
         }
 
 

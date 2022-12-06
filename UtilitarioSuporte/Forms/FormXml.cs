@@ -47,7 +47,7 @@ namespace UtilitarioSuporte.Forms
                 lblSerie.Visible = true;
                 dataGridViewSaltados.Visible = true;
                 lblSaltados.Visible = true;
-                notaXml.AgruparValorPorSerie(notaXml.DataTableNotas);
+                notaXml.AgruparValorPorSerie(notaXml.DataTableNotas, tipo);
                 dataGridViewSerie.DataSource = notaXml.DataTableSerie;
                 dataGridViewSaltados.DataSource = notaXml.VerificarNumeracaoSaltada(notaXml.DataTableNotas);
             }

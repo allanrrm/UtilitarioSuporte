@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using UtilitarioSuporte.Forms;
+using UtilitarioSuporte.Negocio;
 
 namespace UtilitarioSuporte
 {
@@ -154,6 +156,10 @@ namespace UtilitarioSuporte
         {
             OpenChildForm(new FormXml(2));
         }
+        private void btnTotalizacao_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormTotalizacao());
+        }
         private void btnRecuperarBase_Click(object sender, EventArgs e)
         {
             EsconderSubMenu();
@@ -216,7 +222,10 @@ namespace UtilitarioSuporte
         }
         private void btnFechar_Click(object sender, EventArgs e)
         {
+            Funcoes.AbrirPastaSintegra();
             Application.Exit();
         }
+
+
     }
 }

@@ -44,7 +44,7 @@ namespace UtilitarioSuporte.Negocio
             DataTableNotas = dataTableNotas.Copy();
 
         }
-        public void AgruparValorPorSerie(DataTable dataTableNotas)
+        public void AgruparValorPorSerie(DataTable dataTableNotas, int tipo)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("Serie", typeof(string));
@@ -52,7 +52,14 @@ namespace UtilitarioSuporte.Negocio
             
             foreach (DataRow dr in dataTableNotas.Rows)
             {
-                dt.Rows.Add(new object[] { dr["Serie"], dr["ValorTotal"] });
+                if(tipo == 2){
+                    dt.Rows.Add(new object[] { dr["Serie"], dr["ValorTotal"] });
+                }
+                else
+                {
+                    dt.Rows.Add(new object[] { dr["Serie"], dr["Total"] });
+                }
+                
             }
 
            var obj = from b in dt.AsEnumerable()

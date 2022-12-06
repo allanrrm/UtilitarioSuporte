@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnFechar = new FontAwesome.Sharp.IconButton();
             this.btnConexao = new FontAwesome.Sharp.IconButton();
+            this.btnFechar = new FontAwesome.Sharp.IconButton();
             this.btnExterno = new FontAwesome.Sharp.IconButton();
             this.btnRestaurar = new FontAwesome.Sharp.IconButton();
             this.panelSubMenuXml = new System.Windows.Forms.Panel();
+            this.btnTotalizacao = new FontAwesome.Sharp.IconButton();
             this.btnNFCe = new FontAwesome.Sharp.IconButton();
             this.btnSaida = new FontAwesome.Sharp.IconButton();
             this.btnEntrada = new FontAwesome.Sharp.IconButton();
@@ -47,7 +48,6 @@
             this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.btnTotalizacao = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelSubMenuXml.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -70,30 +70,8 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(180, 561);
+            this.panelMenu.Size = new System.Drawing.Size(191, 561);
             this.panelMenu.TabIndex = 1;
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnFechar.FlatAppearance.BorderSize = 0;
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFechar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnFechar.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
-            this.btnFechar.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnFechar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnFechar.IconSize = 32;
-            this.btnFechar.Location = new System.Drawing.Point(0, 523);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(180, 45);
-            this.btnFechar.TabIndex = 5;
-            this.btnFechar.Text = "Sair";
-            this.btnFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            this.btnFechar.MouseLeave += new System.EventHandler(this.btnFechar_MouseLeave);
-            this.btnFechar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnFechar_MouseMove);
             // 
             // btnConexao
             // 
@@ -116,6 +94,28 @@
             this.btnConexao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConexao.UseVisualStyleBackColor = true;
             this.btnConexao.Click += new System.EventHandler(this.btnConexao_Click);
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFechar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnFechar.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
+            this.btnFechar.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnFechar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFechar.IconSize = 32;
+            this.btnFechar.Location = new System.Drawing.Point(0, 523);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(180, 45);
+            this.btnFechar.TabIndex = 5;
+            this.btnFechar.Text = "Sair";
+            this.btnFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            this.btnFechar.MouseLeave += new System.EventHandler(this.btnFechar_MouseLeave);
+            this.btnFechar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnFechar_MouseMove);
             // 
             // btnExterno
             // 
@@ -175,6 +175,27 @@
             this.panelSubMenuXml.Name = "panelSubMenuXml";
             this.panelSubMenuXml.Size = new System.Drawing.Size(180, 163);
             this.panelSubMenuXml.TabIndex = 4;
+            // 
+            // btnTotalizacao
+            // 
+            this.btnTotalizacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(65)))), ((int)(((byte)(84)))));
+            this.btnTotalizacao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTotalizacao.FlatAppearance.BorderSize = 0;
+            this.btnTotalizacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTotalizacao.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnTotalizacao.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.btnTotalizacao.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnTotalizacao.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnTotalizacao.IconSize = 16;
+            this.btnTotalizacao.Location = new System.Drawing.Point(0, 118);
+            this.btnTotalizacao.Name = "btnTotalizacao";
+            this.btnTotalizacao.Size = new System.Drawing.Size(180, 43);
+            this.btnTotalizacao.TabIndex = 8;
+            this.btnTotalizacao.Text = "Totalizacao";
+            this.btnTotalizacao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTotalizacao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTotalizacao.UseVisualStyleBackColor = false;
+            this.btnTotalizacao.Click += new System.EventHandler(this.btnTotalizacao_Click);
             // 
             // btnNFCe
             // 
@@ -337,9 +358,9 @@
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
             this.panelTitleBar.Controls.Add(this.panelShadow);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(180, 0);
+            this.panelTitleBar.Location = new System.Drawing.Point(191, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(828, 98);
+            this.panelTitleBar.Size = new System.Drawing.Size(817, 98);
             this.panelTitleBar.TabIndex = 5;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -373,30 +394,10 @@
             this.panelDesktop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDesktop.Location = new System.Drawing.Point(180, 98);
+            this.panelDesktop.Location = new System.Drawing.Point(174, 98);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(828, 463);
+            this.panelDesktop.Size = new System.Drawing.Size(834, 463);
             this.panelDesktop.TabIndex = 6;
-            // 
-            // btnTotalizacao
-            // 
-            this.btnTotalizacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(65)))), ((int)(((byte)(84)))));
-            this.btnTotalizacao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTotalizacao.FlatAppearance.BorderSize = 0;
-            this.btnTotalizacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTotalizacao.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnTotalizacao.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.btnTotalizacao.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnTotalizacao.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnTotalizacao.IconSize = 16;
-            this.btnTotalizacao.Location = new System.Drawing.Point(0, 118);
-            this.btnTotalizacao.Name = "btnTotalizacao";
-            this.btnTotalizacao.Size = new System.Drawing.Size(180, 43);
-            this.btnTotalizacao.TabIndex = 8;
-            this.btnTotalizacao.Text = "Totalizacao";
-            this.btnTotalizacao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTotalizacao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTotalizacao.UseVisualStyleBackColor = false;
             // 
             // FormMenuPrincipal
             // 

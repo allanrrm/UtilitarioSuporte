@@ -91,6 +91,12 @@
     <Compile Include="Forms\FormMenuPrincipal.Designer.cs">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormTotalizacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTotalizacao.Designer.cs">
+      <DependentUpon>FormTotalizacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormXml.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTotalizacao.resx">
+      <DependentUpon>FormTotalizacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormXml.resx">
       <DependentUpon>FormXml.cs</DependentUpon>

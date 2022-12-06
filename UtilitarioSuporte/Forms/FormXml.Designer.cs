@@ -91,10 +91,10 @@
             // 
             // lblValorXml
             // 
-            this.lblValorXml.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblValorXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblValorXml.AutoSize = true;
             this.lblValorXml.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorXml.Location = new System.Drawing.Point(628, 72);
+            this.lblValorXml.Location = new System.Drawing.Point(527, 75);
             this.lblValorXml.Name = "lblValorXml";
             this.lblValorXml.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblValorXml.Size = new System.Drawing.Size(11, 16);
@@ -104,10 +104,10 @@
             // 
             // lblValorAutorizadas
             // 
-            this.lblValorAutorizadas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblValorAutorizadas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblValorAutorizadas.AutoSize = true;
             this.lblValorAutorizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorAutorizadas.Location = new System.Drawing.Point(628, 11);
+            this.lblValorAutorizadas.Location = new System.Drawing.Point(527, 14);
             this.lblValorAutorizadas.Name = "lblValorAutorizadas";
             this.lblValorAutorizadas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblValorAutorizadas.Size = new System.Drawing.Size(11, 16);
@@ -117,10 +117,10 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(472, 72);
+            this.label1.Location = new System.Drawing.Point(371, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 16);
             this.label1.TabIndex = 3;
@@ -128,10 +128,10 @@
             // 
             // lblValorA
             // 
-            this.lblValorA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblValorA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblValorA.AutoSize = true;
             this.lblValorA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorA.Location = new System.Drawing.Point(498, 11);
+            this.lblValorA.Location = new System.Drawing.Point(397, 14);
             this.lblValorA.Name = "lblValorA";
             this.lblValorA.Size = new System.Drawing.Size(124, 16);
             this.lblValorA.TabIndex = 2;
@@ -139,10 +139,10 @@
             // 
             // lblContadorNotasXml
             // 
-            this.lblContadorNotasXml.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblContadorNotasXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContadorNotasXml.AutoSize = true;
             this.lblContadorNotasXml.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContadorNotasXml.Location = new System.Drawing.Point(241, 72);
+            this.lblContadorNotasXml.Location = new System.Drawing.Point(344, 75);
             this.lblContadorNotasXml.Name = "lblContadorNotasXml";
             this.lblContadorNotasXml.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblContadorNotasXml.Size = new System.Drawing.Size(11, 16);
@@ -152,10 +152,10 @@
             // 
             // lblContadorCanceladas
             // 
-            this.lblContadorCanceladas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblContadorCanceladas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContadorCanceladas.AutoSize = true;
             this.lblContadorCanceladas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContadorCanceladas.Location = new System.Drawing.Point(241, 41);
+            this.lblContadorCanceladas.Location = new System.Drawing.Point(344, 44);
             this.lblContadorCanceladas.Name = "lblContadorCanceladas";
             this.lblContadorCanceladas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblContadorCanceladas.Size = new System.Drawing.Size(11, 16);
@@ -165,10 +165,10 @@
             // 
             // lblContadorAutorizadas
             // 
-            this.lblContadorAutorizadas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblContadorAutorizadas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContadorAutorizadas.AutoSize = true;
             this.lblContadorAutorizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContadorAutorizadas.Location = new System.Drawing.Point(241, 11);
+            this.lblContadorAutorizadas.Location = new System.Drawing.Point(344, 14);
             this.lblContadorAutorizadas.Name = "lblContadorAutorizadas";
             this.lblContadorAutorizadas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblContadorAutorizadas.Size = new System.Drawing.Size(11, 16);
@@ -178,10 +178,10 @@
             // 
             // lblNotasXml
             // 
-            this.lblNotasXml.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNotasXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNotasXml.AutoSize = true;
             this.lblNotasXml.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotasXml.Location = new System.Drawing.Point(131, 72);
+            this.lblNotasXml.Location = new System.Drawing.Point(234, 75);
             this.lblNotasXml.Name = "lblNotasXml";
             this.lblNotasXml.Size = new System.Drawing.Size(104, 16);
             this.lblNotasXml.TabIndex = 3;
@@ -189,10 +189,10 @@
             // 
             // lblCanceladas
             // 
-            this.lblCanceladas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCanceladas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCanceladas.AutoSize = true;
             this.lblCanceladas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCanceladas.Location = new System.Drawing.Point(152, 42);
+            this.lblCanceladas.Location = new System.Drawing.Point(255, 45);
             this.lblCanceladas.Name = "lblCanceladas";
             this.lblCanceladas.Size = new System.Drawing.Size(83, 16);
             this.lblCanceladas.TabIndex = 2;
@@ -200,10 +200,10 @@
             // 
             // lblAutorizadas
             // 
-            this.lblAutorizadas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAutorizadas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAutorizadas.AutoSize = true;
             this.lblAutorizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAutorizadas.Location = new System.Drawing.Point(154, 11);
+            this.lblAutorizadas.Location = new System.Drawing.Point(257, 14);
             this.lblAutorizadas.Name = "lblAutorizadas";
             this.lblAutorizadas.Size = new System.Drawing.Size(81, 16);
             this.lblAutorizadas.TabIndex = 1;
@@ -211,10 +211,11 @@
             // 
             // lblContadorNotas
             // 
-            this.lblContadorNotas.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblContadorNotas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContadorNotas.AutoSize = true;
             this.lblContadorNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContadorNotas.Location = new System.Drawing.Point(60, 41);
+            this.lblContadorNotas.Location = new System.Drawing.Point(157, 44);
             this.lblContadorNotas.Name = "lblContadorNotas";
             this.lblContadorNotas.Size = new System.Drawing.Size(15, 20);
             this.lblContadorNotas.TabIndex = 1;
@@ -222,10 +223,11 @@
             // 
             // lblNumeroNotas
             // 
-            this.lblNumeroNotas.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNumeroNotas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNumeroNotas.AutoSize = true;
             this.lblNumeroNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroNotas.Location = new System.Drawing.Point(12, 24);
+            this.lblNumeroNotas.Location = new System.Drawing.Point(109, 27);
             this.lblNumeroNotas.Name = "lblNumeroNotas";
             this.lblNumeroNotas.Size = new System.Drawing.Size(123, 17);
             this.lblNumeroNotas.TabIndex = 0;

@@ -55,7 +55,8 @@ namespace UtilitarioSuporte.DataAccess
                 "TOTAL, " +
                 "CANCELADO, " +
                 "CHAVE_ACESSO, " +
-                "XML " +
+                "XML, " +
+                "SERIE " +
                 "FROM " +
                 "NOTA_FISCAL " +
                 "WHERE " +

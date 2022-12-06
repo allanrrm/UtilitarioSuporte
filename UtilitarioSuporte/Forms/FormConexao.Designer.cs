@@ -85,7 +85,7 @@
             this.panel2.Controls.Add(this.lblSenha);
             this.panel2.Controls.Add(this.textBoxUsuario);
             this.panel2.Controls.Add(this.textBoxBaseDados);
-            this.panel2.Location = new System.Drawing.Point(1, 167);
+            this.panel2.Location = new System.Drawing.Point(1, 80);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(481, 202);
             this.panel2.TabIndex = 26;
