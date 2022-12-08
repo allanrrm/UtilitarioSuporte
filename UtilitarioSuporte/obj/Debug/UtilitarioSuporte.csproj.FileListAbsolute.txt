@@ -28,3 +28,6 @@ C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.csproj.Co
 C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.csproj.CopyComplete
 C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.exe
 C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.pdb
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\bin\Debug\BouncyCastle.Crypto.dll
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\bin\Debug\itextsharp.dll
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\bin\Debug\itextsharp.xml

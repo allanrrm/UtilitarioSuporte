@@ -61,5 +61,6 @@ namespace UtilitarioSuporte.Forms
         {
             ExecutarFiltroNotas(comboBoxMes.Text, textBoxAno.Text, tipo);
         }
+
     }
 }

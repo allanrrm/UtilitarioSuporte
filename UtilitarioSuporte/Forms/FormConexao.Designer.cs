@@ -43,14 +43,11 @@
             this.lblSenha = new System.Windows.Forms.Label();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.textBoxBaseDados = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnConectar = new FontAwesome.Sharp.IconButton();
             this.btnSalvar = new FontAwesome.Sharp.IconButton();
             this.panelBotoesConexao = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panelBotoesConexao.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,9 +56,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(482, 663);
@@ -71,7 +67,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.Controls.Add(this.comboBoxEmpresa);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBoxSenha);
@@ -85,14 +81,13 @@
             this.panel2.Controls.Add(this.lblSenha);
             this.panel2.Controls.Add(this.textBoxUsuario);
             this.panel2.Controls.Add(this.textBoxBaseDados);
-            this.panel2.Location = new System.Drawing.Point(1, 80);
+            this.panel2.Location = new System.Drawing.Point(1, 164);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(481, 202);
             this.panel2.TabIndex = 26;
             // 
             // comboBoxEmpresa
             // 
-            this.comboBoxEmpresa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBoxEmpresa.FormattingEnabled = true;
             this.comboBoxEmpresa.Location = new System.Drawing.Point(276, 139);
             this.comboBoxEmpresa.Name = "comboBoxEmpresa";
@@ -101,9 +96,8 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(9, 18);
@@ -114,7 +108,6 @@
             // 
             // textBoxSenha
             // 
-            this.textBoxSenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxSenha.Location = new System.Drawing.Point(145, 139);
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(100, 20);
@@ -124,7 +117,6 @@
             // 
             // textBoxPorta
             // 
-            this.textBoxPorta.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxPorta.Location = new System.Drawing.Point(273, 86);
             this.textBoxPorta.Name = "textBoxPorta";
             this.textBoxPorta.Size = new System.Drawing.Size(100, 20);
@@ -133,9 +125,8 @@
             // 
             // lblEmpresa
             // 
-            this.lblEmpresa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.lblEmpresa.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblEmpresa.Location = new System.Drawing.Point(270, 119);
@@ -146,9 +137,8 @@
             // 
             // lblUsuario
             // 
-            this.lblUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.lblUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblUsuario.Location = new System.Drawing.Point(10, 119);
@@ -159,9 +149,8 @@
             // 
             // lblPorta
             // 
-            this.lblPorta.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblPorta.AutoSize = true;
-            this.lblPorta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.lblPorta.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblPorta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblPorta.Location = new System.Drawing.Point(270, 66);
@@ -172,7 +161,6 @@
             // 
             // textBoxIpServidor
             // 
-            this.textBoxIpServidor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxIpServidor.Location = new System.Drawing.Point(13, 86);
             this.textBoxIpServidor.Name = "textBoxIpServidor";
             this.textBoxIpServidor.Size = new System.Drawing.Size(100, 20);
@@ -181,9 +169,8 @@
             // 
             // lblBaseDados
             // 
-            this.lblBaseDados.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblBaseDados.AutoSize = true;
-            this.lblBaseDados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.lblBaseDados.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblBaseDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBaseDados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblBaseDados.Location = new System.Drawing.Point(142, 66);
@@ -194,9 +181,8 @@
             // 
             // lbliP
             // 
-            this.lbliP.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbliP.AutoSize = true;
-            this.lbliP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.lbliP.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbliP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbliP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbliP.Location = new System.Drawing.Point(10, 66);
@@ -207,9 +193,8 @@
             // 
             // lblSenha
             // 
-            this.lblSenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSenha.AutoSize = true;
-            this.lblSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.lblSenha.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblSenha.Location = new System.Drawing.Point(142, 119);
@@ -220,7 +205,6 @@
             // 
             // textBoxUsuario
             // 
-            this.textBoxUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxUsuario.Location = new System.Drawing.Point(13, 139);
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(100, 20);
@@ -229,35 +213,11 @@
             // 
             // textBoxBaseDados
             // 
-            this.textBoxBaseDados.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxBaseDados.Location = new System.Drawing.Point(145, 85);
             this.textBoxBaseDados.Name = "textBoxBaseDados";
             this.textBoxBaseDados.Size = new System.Drawing.Size(100, 20);
             this.textBoxBaseDados.TabIndex = 14;
             this.textBoxBaseDados.Text = "esistemloja";
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(482, 46);
-            this.panel3.TabIndex = 28;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(184, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 20);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Configurações";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnConectar
             // 
@@ -328,8 +288,6 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panelBotoesConexao.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -341,8 +299,6 @@
         private FontAwesome.Sharp.IconButton btnConectar;
         private FontAwesome.Sharp.IconButton btnSalvar;
         private System.Windows.Forms.Panel panelBotoesConexao;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox comboBoxEmpresa;
         private System.Windows.Forms.Label label2;

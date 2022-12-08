@@ -14,8 +14,6 @@ namespace UtilitarioSuporte.DataAccess
             NpgsqlCommand empresas = new NpgsqlCommand("select id, nome_razao_social from pessoa inner join empresa e on pessoa.id = e.id_pessoa", conn);
             return empresas;
         }
-
-
         public static NpgsqlCommand CmdConsultarNotasNFe(NpgsqlConnection conn, string mes, string ano, int tipo, string idEmpresa) //Alterar nome do método
         {
             DateTime datainicial = DateTime.Parse("1." + mes + ano);
@@ -77,9 +75,5 @@ namespace UtilitarioSuporte.DataAccess
             return notas;
 
         }
-
-
-
-
     }
 }

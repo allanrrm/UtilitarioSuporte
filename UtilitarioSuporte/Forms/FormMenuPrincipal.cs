@@ -116,7 +116,7 @@ namespace UtilitarioSuporte
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-        private bool OpenChildForm(Form childForm)
+        public bool OpenChildForm(Form childForm)
         {
             if(currentChildForm != null)
             {

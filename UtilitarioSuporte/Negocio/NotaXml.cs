@@ -89,7 +89,6 @@ namespace UtilitarioSuporte.Negocio
             DataTableSerie = dtab.Copy();
 
         }
-
         public DataTable VerificarNumeracaoSaltada(DataTable dataTableNotas) 
         {
             DataTable dt = new DataTable();
@@ -115,7 +114,6 @@ namespace UtilitarioSuporte.Negocio
 
             return dt;
         }
-
         public void CalcularValorXml(DataTable dataTableNotas, int tipo)
         {
             ValorTotalXml = (double)dataTableNotas.AsEnumerable().Select(s => s.Field<decimal>("valor")).Sum();

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
@@ -15,14 +17,24 @@ namespace UtilitarioSuporte.Negocio
         public static List<string> DescriptografarStringConexao()
         {
             List<string> descriptografar = new List<string>();
-            string conexao = DescriptografarConexaoBanco().ToString();
-            //Separação da StringConexão e do IdEmpresa que está criptografado no arquivo Configuração.
+            string conexao = "";
+            try
+            {
+            conexao = DescriptografarConexaoBanco().ToString();
+            //Separação da StringConexão e do IdEmpresa que está criptografado no arquivo Configuração.                   
             string[] infoConf = conexao.Split('|');
             descriptografar.Add(infoConf[0]);
             descriptografar.Add(infoConf[1]);
-            return descriptografar;
-        }
+            }
+            catch
+            {            
+                return descriptografar;
+            }
 
+            return descriptografar;
+
+
+        }
         public static bool VerificarConexaoExistente()
         {
             bool ativo;
@@ -36,7 +48,6 @@ namespace UtilitarioSuporte.Negocio
             }
             return ativo;
         }
-
         public static string MontaStringConexao(string servidor, string porta, string baseDados, string usuario, string senha)
         {
             StringBuilder StringConexao = new StringBuilder();
@@ -49,7 +60,6 @@ namespace UtilitarioSuporte.Negocio
                 .Append($"Timeout={5};"); //retirar
             return StringConexao.ToString();
         }
-
         public static void CriptografarConexaoBanco(string conexao, int idEmpresa)
         {
             try
@@ -91,7 +101,6 @@ namespace UtilitarioSuporte.Negocio
                 MessageBox.Show("Conexão não foi salva, contate o administrador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
         private static string DescriptografarConexaoBanco()
         {
             try
@@ -134,20 +143,18 @@ namespace UtilitarioSuporte.Negocio
                 }
 
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show($"The decryption failed. {ex}");
-                return null;
+                MessageBox.Show("Não foi possivel estabelecer uma conexão, por favor, verifique as informações de Conexão.");
+                return "";
             }
         }
-
         public static string TransformarMesExtenso(int mes)
         {
             string mesExtenso = System.Globalization.DateTimeFormatInfo.CurrentInfo.GetMonthName(mes).ToLower();
             mesExtenso = char.ToUpper(mesExtenso[0]) + mesExtenso.Substring(1);
             return mesExtenso;
         }
-
         public static DataTable DiferencaDataTables(DataTable dataTableNotasBanco, DataTable dataTableNotasXml, int tipo)
         {
             DataTable dataTableNotasSemCanceladas = new DataTable();
@@ -250,7 +257,6 @@ namespace UtilitarioSuporte.Negocio
 
             //return Resultado;
         }
-
         public static void AbrirPastaSintegra()
         {
             if (MessageBox.Show("Gostaria de Abrir a Pasta do Sintegra?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -269,7 +275,107 @@ namespace UtilitarioSuporte.Negocio
             }
 
         }
+        public static void GerarArquivoPDF(NotaXml NFeEntrada, NotaXml NFeSaida, NotaXml NFCe, Dictionary<string, bool> dicRelatorios, string observacoes, string mes, string ano)
+        {
+            DateTime datainicial = DateTime.Parse("1." + mes + ano);
+            DateTime datafinal = (datainicial.AddMonths(1).AddDays(-1));
+            Dictionary<string, bool> relatoriosEmitidos = new Dictionary<string, bool>();
+            foreach (KeyValuePair<string, bool> e in dicRelatorios)
+            {
+                if(e.Value == true)
+                {               
+                    relatoriosEmitidos.Add(e.Key, e.Value);
+                }
+            }
+
+            Document doc = new Document(PageSize.A4);//criando e estipulando o tipo da folha usada
+            doc.SetMargins(40, 40, 40, 80);//estibulando o espaçamento das margens que queremos
+            doc.AddCreationDate();//adicionando as configuracoes
+            //caminho onde sera criado o pdf + nome desejado                   
+            string caminhoPasta = @"C:\Autocom\Sintegra\" + datainicial.Year + @"\Sintegra " + Funcoes.TransformarMesExtenso(datainicial.Month) + @"\";
+            if (!Directory.Exists(caminhoPasta))
+            {
+                Directory.CreateDirectory(caminhoPasta);
+            }
+            string caminho = @"C:\Autocom\Sintegra\" + datainicial.Year + @"\Sintegra " + Funcoes.TransformarMesExtenso(datainicial.Month) + @"\Ticket.pdf";
+            //criando o arquivo pdf embranco, passando como parametro a variavel doc criada acima e a variavel caminho
+            //tambem criada acima.
+            //OBS: o nome sempre deve ser terminado com .pdf  
+            PdfWriter writer = PdfWriter.GetInstance(doc, new
+            FileStream(caminho, FileMode.Create));
+            doc.Open();
+
+            Paragraph titulo = new Paragraph("Ticket",new Font(Font.NORMAL, 18));
+            titulo.Alignment = Element.ALIGN_CENTER;
+            doc.Add(titulo);
+
+            titulo = new Paragraph("NF-e Entrada", new Font(Font.NORMAL, 14));
+            titulo.Alignment = Element.ALIGN_CENTER;
+            doc.Add(titulo);
+            string linha = $"Numero de Notas: {NFeEntrada.NumeroNotas}\r\n" +
+                           $"Autorizadas: {NFeEntrada.Autorizadas}\r\n" +
+                           $"Canceladas: {NFeEntrada.Canceladas}\r\n" +
+                           $"Valor(Autorizadas): {NFeEntrada.ValorTotal}\r\n\r\n";
+            Paragraph paragrafo = new Paragraph(linha,
+            new Font(Font.NORMAL, 14));
+            paragrafo.Alignment = Element.ALIGN_LEFT;
+            doc.Add(paragrafo);
 
 
+            titulo = new Paragraph("NF-e Saída", new Font(Font.NORMAL, 14));
+            titulo.Alignment = Element.ALIGN_CENTER;
+            doc.Add(titulo);
+            linha = $"Numero de Notas: {NFeSaida.NumeroNotas}\r\n" +
+                           $"Autorizadas: {NFeSaida.Autorizadas}\r\n" +
+                           $"Canceladas: {NFeSaida.Canceladas}\r\n" +
+                           $"Valor(Autorizadas): {NFeSaida.ValorTotal}\r\n\r\n";
+            paragrafo = new Paragraph(linha,
+            new Font(Font.NORMAL, 14));
+            paragrafo.Alignment = Element.ALIGN_LEFT;
+            doc.Add(paragrafo);
+
+            titulo = new Paragraph("NFC-e", new Font(Font.NORMAL, 14));
+            titulo.Alignment = Element.ALIGN_CENTER;
+            doc.Add(titulo);
+
+            linha = $"Numero de Notas: {NFCe.NumeroNotas}\r\n" +
+                           $"Autorizadas: {NFCe.Autorizadas}\r\n" +
+                           $"Canceladas: {NFCe.Canceladas}\r\n" +
+                           $"Valor(Autorizadas): {NFCe.ValorTotal}\r\n\r\n";
+            paragrafo = new Paragraph(linha,
+            new Font(Font.NORMAL, 14));
+            paragrafo.Alignment = Element.ALIGN_LEFT;
+            doc.Add(paragrafo);
+
+            titulo = new Paragraph("Relatorios Emitidos\r\n", new Font(Font.NORMAL, 14));
+            titulo.Alignment = Element.ALIGN_CENTER;
+            doc.Add(titulo);
+
+            foreach(KeyValuePair<string, bool> e in relatoriosEmitidos)
+            {
+                linha = $"- {e.Key}\r\n";
+                paragrafo = new Paragraph(linha,
+                new Font(Font.NORMAL, 14));
+                paragrafo.Alignment = Element.ALIGN_LEFT;
+                doc.Add(paragrafo);
+            }
+            string texto = $"\r\n";
+            paragrafo = new Paragraph(texto + observacoes,
+            new Font(Font.NORMAL, 14));
+            paragrafo.Alignment = Element.ALIGN_LEFT;
+            doc.Add(paragrafo);
+            //Paragraph paragrafo = new Paragraph("",
+            //new Font(Font.NORMAL, 14));
+            ////etipulando o alinhamneto
+            //paragrafo.Alignment = Element.ALIGN_JUSTIFIED;
+            ////Alinhamento Justificado
+            ////adicioando texto
+
+            ////AQUI ONDE VAMOS ADICIONAR A VARIAVEL DO TIPO "Font"
+            //paragrafo.Font = new Font(Font.NORMAL, 14,
+            //(int)System.Drawing.FontStyle.Regular);
+
+            doc.Close();
+        }
     }
 }
