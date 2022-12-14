@@ -31,3 +31,4 @@ C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.pdb
 C:\Dev\UtilitarioSuporte\UtilitarioSuporte\bin\Debug\BouncyCastle.Crypto.dll
 C:\Dev\UtilitarioSuporte\UtilitarioSuporte\bin\Debug\itextsharp.dll
 C:\Dev\UtilitarioSuporte\UtilitarioSuporte\bin\Debug\itextsharp.xml
+C:\Dev\UtilitarioSuporte\UtilitarioSuporte\obj\Debug\UtilitarioSuporte.Forms.FormRecuperarBase.resources

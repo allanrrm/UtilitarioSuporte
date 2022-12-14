@@ -5,7 +5,6 @@ using System.Data;
 using System.IO;
 using System.Windows;
 using System.Xml;
-using UtilitarioSuporte;
 using UtilitarioSuporte.DataAccess;
 using UtilitarioSuporte.Negocio;
 using static UtilitarioSuporte.Recursos.MessageBoxPersonalizada;
@@ -85,29 +84,14 @@ namespace DataAccess
         }
         public static DataTable PreencherFormularioDataTable(string mes, string ano, int tipo)
         {
-            List<string> informacaoConfiguracao;
-            NpgsqlConnection conn;
+
+            List<string> informacaoConfiguracao = Funcoes.DescriptografarStringConexao();
+            NpgsqlConnection conn = Conexao.ConexaoBase(informacaoConfiguracao[0]);
             NpgsqlCommand comando;
-            DataTable dataTableNotas;
-            try
-            {
-                informacaoConfiguracao = Funcoes.DescriptografarStringConexao();
-                conn = Conexao.ConexaoBase(informacaoConfiguracao[0]);
-                comando = ComandosSQL.CmdConsultarNotasNFe(conn, mes, ano, tipo, informacaoConfiguracao[1]);
-                dataTableNotas = Conexao.ExecReader(comando, conn);
-                
-
-            }
-            catch
-            {
-                conn = null;
-                comando = null;
-                informacaoConfiguracao = null;
-                FormMenuPrincipal formprincipal = new FormMenuPrincipal();
-                formprincipal.OpenChildForm(new FormConexao());
-            }
-
+            comando = ComandosSQL.CmdConsultarNotasNFe(conn, mes, ano, tipo, informacaoConfiguracao[1]);    
+            DataTable dataTableNotas = Conexao.ExecReader(comando, conn);
             return dataTableNotas;
+
         }
     }
     }

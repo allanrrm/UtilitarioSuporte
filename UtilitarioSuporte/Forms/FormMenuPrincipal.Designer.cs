@@ -84,10 +84,10 @@
             this.btnConexao.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConexao.IconSize = 32;
             this.btnConexao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConexao.Location = new System.Drawing.Point(0, 463);
+            this.btnConexao.Location = new System.Drawing.Point(0, 441);
             this.btnConexao.Name = "btnConexao";
             this.btnConexao.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnConexao.Size = new System.Drawing.Size(180, 60);
+            this.btnConexao.Size = new System.Drawing.Size(191, 60);
             this.btnConexao.TabIndex = 7;
             this.btnConexao.Text = "Conexao";
             this.btnConexao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -106,9 +106,9 @@
             this.btnFechar.IconColor = System.Drawing.Color.Gainsboro;
             this.btnFechar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnFechar.IconSize = 32;
-            this.btnFechar.Location = new System.Drawing.Point(0, 523);
+            this.btnFechar.Location = new System.Drawing.Point(0, 516);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(180, 45);
+            this.btnFechar.Size = new System.Drawing.Size(191, 45);
             this.btnFechar.TabIndex = 5;
             this.btnFechar.Text = "Sair";
             this.btnFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -129,10 +129,10 @@
             this.btnExterno.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExterno.IconSize = 32;
             this.btnExterno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExterno.Location = new System.Drawing.Point(0, 403);
+            this.btnExterno.Location = new System.Drawing.Point(0, 381);
             this.btnExterno.Name = "btnExterno";
             this.btnExterno.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnExterno.Size = new System.Drawing.Size(180, 60);
+            this.btnExterno.Size = new System.Drawing.Size(191, 60);
             this.btnExterno.TabIndex = 6;
             this.btnExterno.Text = "Externo";
             this.btnExterno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -143,7 +143,6 @@
             // btnRestaurar
             // 
             this.btnRestaurar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRestaurar.Enabled = false;
             this.btnRestaurar.FlatAppearance.BorderSize = 0;
             this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestaurar.ForeColor = System.Drawing.Color.Gainsboro;
@@ -152,10 +151,10 @@
             this.btnRestaurar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRestaurar.IconSize = 32;
             this.btnRestaurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRestaurar.Location = new System.Drawing.Point(0, 343);
+            this.btnRestaurar.Location = new System.Drawing.Point(0, 321);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnRestaurar.Size = new System.Drawing.Size(180, 60);
+            this.btnRestaurar.Size = new System.Drawing.Size(191, 60);
             this.btnRestaurar.TabIndex = 5;
             this.btnRestaurar.Text = "Restaurar Base";
             this.btnRestaurar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -171,9 +170,9 @@
             this.panelSubMenuXml.Controls.Add(this.btnSaida);
             this.panelSubMenuXml.Controls.Add(this.btnEntrada);
             this.panelSubMenuXml.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuXml.Location = new System.Drawing.Point(0, 180);
+            this.panelSubMenuXml.Location = new System.Drawing.Point(0, 158);
             this.panelSubMenuXml.Name = "panelSubMenuXml";
-            this.panelSubMenuXml.Size = new System.Drawing.Size(180, 163);
+            this.panelSubMenuXml.Size = new System.Drawing.Size(191, 163);
             this.panelSubMenuXml.TabIndex = 4;
             // 
             // btnTotalizacao
@@ -189,7 +188,8 @@
             this.btnTotalizacao.IconSize = 16;
             this.btnTotalizacao.Location = new System.Drawing.Point(0, 118);
             this.btnTotalizacao.Name = "btnTotalizacao";
-            this.btnTotalizacao.Size = new System.Drawing.Size(180, 43);
+            this.btnTotalizacao.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnTotalizacao.Size = new System.Drawing.Size(191, 43);
             this.btnTotalizacao.TabIndex = 8;
             this.btnTotalizacao.Text = "Totalizacao";
             this.btnTotalizacao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -210,7 +210,7 @@
             this.btnNFCe.IconSize = 16;
             this.btnNFCe.Location = new System.Drawing.Point(0, 80);
             this.btnNFCe.Name = "btnNFCe";
-            this.btnNFCe.Size = new System.Drawing.Size(180, 38);
+            this.btnNFCe.Size = new System.Drawing.Size(191, 38);
             this.btnNFCe.TabIndex = 2;
             this.btnNFCe.Text = "NFC-e";
             this.btnNFCe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -232,7 +232,7 @@
             this.btnSaida.Location = new System.Drawing.Point(0, 40);
             this.btnSaida.Name = "btnSaida";
             this.btnSaida.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnSaida.Size = new System.Drawing.Size(180, 40);
+            this.btnSaida.Size = new System.Drawing.Size(191, 40);
             this.btnSaida.TabIndex = 1;
             this.btnSaida.Text = "NF-e Saída";
             this.btnSaida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -254,7 +254,7 @@
             this.btnEntrada.Location = new System.Drawing.Point(0, 0);
             this.btnEntrada.Name = "btnEntrada";
             this.btnEntrada.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnEntrada.Size = new System.Drawing.Size(180, 40);
+            this.btnEntrada.Size = new System.Drawing.Size(191, 40);
             this.btnEntrada.TabIndex = 0;
             this.btnEntrada.Text = "NF-e Entrada";
             this.btnEntrada.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -295,10 +295,10 @@
             this.btnXml.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXml.IconSize = 32;
             this.btnXml.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXml.Location = new System.Drawing.Point(0, 120);
+            this.btnXml.Location = new System.Drawing.Point(0, 98);
             this.btnXml.Name = "btnXml";
             this.btnXml.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnXml.Size = new System.Drawing.Size(180, 60);
+            this.btnXml.Size = new System.Drawing.Size(191, 60);
             this.btnXml.TabIndex = 3;
             this.btnXml.Text = "XML";
             this.btnXml.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -313,7 +313,7 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(180, 120);
+            this.panelLogo.Size = new System.Drawing.Size(191, 98);
             this.panelLogo.TabIndex = 2;
             // 
             // lblSuporte
@@ -321,7 +321,7 @@
             this.lblSuporte.AutoSize = true;
             this.lblSuporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSuporte.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblSuporte.Location = new System.Drawing.Point(12, 78);
+            this.lblSuporte.Location = new System.Drawing.Point(25, 65);
             this.lblSuporte.Name = "lblSuporte";
             this.lblSuporte.Size = new System.Drawing.Size(138, 20);
             this.lblSuporte.TabIndex = 1;
@@ -335,7 +335,7 @@
             this.pictureHome.IconColor = System.Drawing.Color.Gainsboro;
             this.pictureHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.pictureHome.IconSize = 49;
-            this.pictureHome.Location = new System.Drawing.Point(57, 26);
+            this.pictureHome.Location = new System.Drawing.Point(70, 13);
             this.pictureHome.Name = "pictureHome";
             this.pictureHome.Size = new System.Drawing.Size(49, 49);
             this.pictureHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -395,9 +395,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.BackColor = System.Drawing.SystemColors.Control;
-            this.panelDesktop.Location = new System.Drawing.Point(174, 98);
+            this.panelDesktop.Location = new System.Drawing.Point(191, 98);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(834, 463);
+            this.panelDesktop.Size = new System.Drawing.Size(817, 463);
             this.panelDesktop.TabIndex = 6;
             // 
             // FormMenuPrincipal

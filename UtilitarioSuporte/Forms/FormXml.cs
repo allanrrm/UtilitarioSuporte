@@ -37,19 +37,17 @@ namespace UtilitarioSuporte.Forms
             lblValorAutorizadas.Text = notaXml.ValorTotal.ToString();
             lblContadorNotasXml.Text = notaXml.NotasComXml.ToString();
             dataGridViewDivergente.Visible = true;
-            lblDivergente.Visible = true;
             Negocio.Negocio.ExtrairNotas(comboBoxMes.Text, textBoxAno.Text, tipo, notaXml);
             notaXml.DataTableNotasXml = Negocio.Negocio.CapturarInformacoesXml(tipo, mes);
             notaXml.CalcularValorXml(notaXml.DataTableNotasXml, tipo);
             if (tipo == 2 || tipo == 1)
-            {
+            {               
                 dataGridViewSerie.Visible = true;
-                lblSerie.Visible = true;
                 dataGridViewSaltados.Visible = true;
-                lblSaltados.Visible = true;
                 notaXml.AgruparValorPorSerie(notaXml.DataTableNotas, tipo);
                 dataGridViewSerie.DataSource = notaXml.DataTableSerie;
                 dataGridViewSaltados.DataSource = notaXml.VerificarNumeracaoSaltada(notaXml.DataTableNotas);
+                dataGridViewNotasSemXml.DataSource = notaXml.DataTableNotasSemXml;
             }
 
             lblValorXml.Text = notaXml.ValorTotalXml.ToString();

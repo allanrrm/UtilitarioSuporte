@@ -20,11 +20,17 @@ namespace UtilitarioSuporte.Negocio
         public DataTable DataTableNotas { get; set; }
         public DataTable DataTableNotasXml { get; set; }
         public DataTable DataTableSerie { get; set; }
+        public IEnumerable<DataRow> DataTableNotasSemXml { get; set; }
         public NotaXml()
         {
 
         }
-        public void ExtrairResultadosNFe(DataTable dataTableNotas)
+
+        public void ExtrairNotasSemXML(DataTable dataTableNotas)
+        {
+             DataTableNotasSemXml = dataTableNotas.AsEnumerable().Where(x => x.Field<object>("xml") == null);      
+        }
+            public void ExtrairResultadosNFe(DataTable dataTableNotas)
         {
             NumeroNotas = dataTableNotas.AsEnumerable().Select(s => s.Field<int>("numero")).Count();
             Autorizadas = dataTableNotas.AsEnumerable().Where(x => x.Field<bool>("cancelado") == false).Select(s => s.Field<int>("numero")).Count();

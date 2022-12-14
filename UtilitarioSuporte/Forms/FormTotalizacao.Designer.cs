@@ -98,16 +98,17 @@
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.AutoScroll = true;
-            this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.btnGerarTicket);
+            this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Controls.Add(this.panel1);
             this.panel4.Controls.Add(this.panel2);
-            this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.panel8);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(800, 753);
@@ -149,10 +150,8 @@
             // 
             // btnGerarTicket
             // 
-            this.btnGerarTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGerarTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnGerarTicket.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnGerarTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGerarTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGerarTicket.ForeColor = System.Drawing.Color.Gainsboro;
@@ -709,9 +708,9 @@
             this.panel5.Controls.Add(this.label41);
             this.panel5.Controls.Add(this.textBoxAno);
             this.panel5.Controls.Add(this.comboBoxMes);
-            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Location = new System.Drawing.Point(3, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(234, 89);
+            this.panel5.Size = new System.Drawing.Size(231, 89);
             this.panel5.TabIndex = 5;
             // 
             // label42
@@ -719,7 +718,7 @@
             this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(104, 32);
+            this.label42.Location = new System.Drawing.Point(102, 32);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(13, 20);
             this.label42.TabIndex = 5;
@@ -734,7 +733,7 @@
             this.btnFiltrar.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnFiltrar.Location = new System.Drawing.Point(0, 64);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(232, 23);
+            this.btnFiltrar.Size = new System.Drawing.Size(229, 23);
             this.btnFiltrar.TabIndex = 4;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
@@ -745,7 +744,7 @@
             this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(145, 8);
+            this.label40.Location = new System.Drawing.Point(143, 8);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(38, 20);
             this.label40.TabIndex = 3;
@@ -756,7 +755,7 @@
             this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(44, 8);
+            this.label41.Location = new System.Drawing.Point(42, 8);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(39, 20);
             this.label41.TabIndex = 2;
@@ -766,7 +765,7 @@
             // 
             this.textBoxAno.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxAno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxAno.Location = new System.Drawing.Point(123, 31);
+            this.textBoxAno.Location = new System.Drawing.Point(121, 31);
             this.textBoxAno.Name = "textBoxAno";
             this.textBoxAno.Size = new System.Drawing.Size(83, 20);
             this.textBoxAno.TabIndex = 1;
@@ -788,14 +787,16 @@
             "Outubro",
             "Novembro",
             "Dezembro"});
-            this.comboBoxMes.Location = new System.Drawing.Point(12, 31);
+            this.comboBoxMes.Location = new System.Drawing.Point(10, 31);
             this.comboBoxMes.Name = "comboBoxMes";
             this.comboBoxMes.Size = new System.Drawing.Size(88, 21);
             this.comboBoxMes.TabIndex = 0;
             // 
             // panel8
             // 
+            this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel8.Controls.Add(this.label4);
+            this.panel8.Controls.Add(this.panel5);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";

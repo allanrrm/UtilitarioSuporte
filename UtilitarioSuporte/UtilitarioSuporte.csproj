@@ -97,6 +97,12 @@
     <Compile Include="Forms\FormMenuPrincipal.Designer.cs">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormRecuperarBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRecuperarBase.Designer.cs">
+      <DependentUpon>FormRecuperarBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormTotalizacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRecuperarBase.resx">
+      <DependentUpon>FormRecuperarBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormTotalizacao.resx">
       <DependentUpon>FormTotalizacao.cs</DependentUpon>

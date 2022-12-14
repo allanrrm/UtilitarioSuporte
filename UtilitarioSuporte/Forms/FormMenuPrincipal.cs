@@ -163,7 +163,9 @@ namespace UtilitarioSuporte
         private void btnRecuperarBase_Click(object sender, EventArgs e)
         {
             EsconderSubMenu();
-            ActivateButton(sender, RGBColors.color1);           
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new FormRecuperarBase());
+
         }
         private void btnExterno_Click(object sender, EventArgs e)
         {
