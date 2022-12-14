@@ -47,6 +47,8 @@ namespace UtilitarioSuporte.Forms
                 notaXml.AgruparValorPorSerie(notaXml.DataTableNotas, tipo);
                 dataGridViewSerie.DataSource = notaXml.DataTableSerie;
                 dataGridViewSaltados.DataSource = notaXml.VerificarNumeracaoSaltada(notaXml.DataTableNotas);
+                dataGridViewNotasSemXml.Visible = true;                
+                notaXml.ExtrairNotasSemXML(notaXml.DataTableNotas);
                 dataGridViewNotasSemXml.DataSource = notaXml.DataTableNotasSemXml;
             }
 

@@ -20,7 +20,7 @@ namespace UtilitarioSuporte.Negocio
         public DataTable DataTableNotas { get; set; }
         public DataTable DataTableNotasXml { get; set; }
         public DataTable DataTableSerie { get; set; }
-        public IEnumerable<DataRow> DataTableNotasSemXml { get; set; }
+        public DataTable DataTableNotasSemXml { get; set; }
         public NotaXml()
         {
 
@@ -28,9 +28,17 @@ namespace UtilitarioSuporte.Negocio
 
         public void ExtrairNotasSemXML(DataTable dataTableNotas)
         {
-             DataTableNotasSemXml = dataTableNotas.AsEnumerable().Where(x => x.Field<object>("xml") == null);      
+            IEnumerable<DataRow> DTNotasSemXml = dataTableNotas.AsEnumerable().Where(x => x.Field<object>("xml") == null);
+            if (DTNotasSemXml.Count() == 0)
+            {
+                return;
+            } 
+            DataTableNotasSemXml = DTNotasSemXml.CopyToDataTable();
+            DataTableNotasSemXml.Columns.Remove("xml");
+            DataTableNotasSemXml.Columns.Remove("recibo");
+
         }
-            public void ExtrairResultadosNFe(DataTable dataTableNotas)
+        public void ExtrairResultadosNFe(DataTable dataTableNotas)
         {
             NumeroNotas = dataTableNotas.AsEnumerable().Select(s => s.Field<int>("numero")).Count();
             Autorizadas = dataTableNotas.AsEnumerable().Where(x => x.Field<bool>("cancelado") == false).Select(s => s.Field<int>("numero")).Count();
