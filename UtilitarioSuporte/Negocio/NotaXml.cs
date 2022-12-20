@@ -26,16 +26,21 @@ namespace UtilitarioSuporte.Negocio
 
         }
 
-        public void ExtrairNotasSemXML(DataTable dataTableNotas)
+        public void ExtrairNotasSemXML(DataTable dataTableNotas, int tipo)
         {
             IEnumerable<DataRow> DTNotasSemXml = dataTableNotas.AsEnumerable().Where(x => x.Field<object>("xml") == null);
+
             if (DTNotasSemXml.Count() == 0)
             {
                 return;
             } 
             DataTableNotasSemXml = DTNotasSemXml.CopyToDataTable();
             DataTableNotasSemXml.Columns.Remove("xml");
-            DataTableNotasSemXml.Columns.Remove("recibo");
+            if(tipo == 2)
+            {
+                DataTableNotasSemXml.Columns.Remove("recibo");
+            }
+            
 
         }
         public void ExtrairResultadosNFe(DataTable dataTableNotas)
