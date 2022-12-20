@@ -24,7 +24,12 @@ namespace UtilitarioSuporte.Forms
         private void ExecutarFiltroNotas(string mes, string ano, int tipo)
         {
             DataTable notasDataTable = Conexao.PreencherFormularioDataTable(mes, ano, tipo);
-            notaXml = Negocio.Negocio.PreencherFormulario(notasDataTable, tipo);
+            if (notasDataTable == null) //Caso não seja feita a conexão, esse DataTable terá o valor de nulo e retornará o formulario em branco
+            {
+                MessageBox.Show("Não foi possivel estabelecer uma conexão, por favor, verifique as informações de Conexão.");
+                return;
+            }
+            notaXml = Negocio.Contexto.PreencherFormulario(notasDataTable, tipo);
             notasDataTable.Columns.Remove("xml");
             if (tipo == 2)
             {
@@ -34,11 +39,11 @@ namespace UtilitarioSuporte.Forms
             lblContadorNotas.Text = notaXml.NumeroNotas.ToString();
             lblContadorAutorizadas.Text = notaXml.Autorizadas.ToString();
             lblContadorCanceladas.Text = notaXml.Canceladas.ToString();
-            lblValorAutorizadas.Text = notaXml.ValorTotal.ToString();
+            lblValorAutorizadas.Text = notaXml.ValorTotal.ToString("F2");
             lblContadorNotasXml.Text = notaXml.NotasComXml.ToString();
             dataGridViewDivergente.Visible = true;
-            Negocio.Negocio.ExtrairNotas(comboBoxMes.Text, textBoxAno.Text, tipo, notaXml);
-            notaXml.DataTableNotasXml = Negocio.Negocio.CapturarInformacoesXml(tipo, mes);
+            Negocio.Contexto.ExtrairNotas(comboBoxMes.Text, textBoxAno.Text, tipo, notaXml);
+            notaXml.DataTableNotasXml = Negocio.Contexto.CapturarInformacoesXml(tipo, mes);
             notaXml.CalcularValorXml(notaXml.DataTableNotasXml, tipo);
             if (tipo == 2 || tipo == 1)
             {               
@@ -52,7 +57,7 @@ namespace UtilitarioSuporte.Forms
                 dataGridViewNotasSemXml.DataSource = notaXml.DataTableNotasSemXml;
             }
 
-            lblValorXml.Text = notaXml.ValorTotalXml.ToString();
+            lblValorXml.Text = notaXml.ValorTotalXml.ToString("F2");
             dataGridViewDivergente.DataSource = Funcoes.DiferencaDataTables(notaXml.DataTableNotas, notaXml.DataTableNotasXml, tipo);
 
         }

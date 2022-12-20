@@ -16,5 +16,10 @@ namespace UtilitarioSuporte.Forms
         {
             InitializeComponent();
         }
+
+        private void btnConectarBD_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

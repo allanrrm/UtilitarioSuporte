@@ -59,9 +59,9 @@ namespace DataAccess
                 dt.Load(dr);
                 return dt;
             }
-            catch (Exception ex)
+            catch
             {
-                throw ex;
+                return null; 
             }
         }
         public static DataTable ConectarBancoDados(string servidor, string porta, string baseDados, string usuario, string senha)
@@ -84,13 +84,21 @@ namespace DataAccess
         }
         public static DataTable PreencherFormularioDataTable(string mes, string ano, int tipo)
         {
+            try
+            {
+                List<string> informacaoConfiguracao = Funcoes.DescriptografarStringConexao();
+                NpgsqlConnection conn = Conexao.ConexaoBase(informacaoConfiguracao[0]);
+                NpgsqlCommand comando;
+                comando = ComandosSQL.CmdConsultarNotasNFe(conn, mes, ano, tipo, informacaoConfiguracao[1]);
+                DataTable dataTableNotas = Conexao.ExecReader(comando, conn);
+                return dataTableNotas;
+            }
+            catch
+            {
+                return null;
+            }
+            
 
-            List<string> informacaoConfiguracao = Funcoes.DescriptografarStringConexao();
-            NpgsqlConnection conn = Conexao.ConexaoBase(informacaoConfiguracao[0]);
-            NpgsqlCommand comando;
-            comando = ComandosSQL.CmdConsultarNotasNFe(conn, mes, ano, tipo, informacaoConfiguracao[1]);    
-            DataTable dataTableNotas = Conexao.ExecReader(comando, conn);
-            return dataTableNotas;
 
         }
     }

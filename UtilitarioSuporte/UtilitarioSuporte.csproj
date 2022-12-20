@@ -115,7 +115,7 @@
     <Compile Include="Forms\FormXml.Designer.cs">
       <DependentUpon>FormXml.cs</DependentUpon>
     </Compile>
-    <Compile Include="Negocio\Negocio.cs" />
+    <Compile Include="Negocio\Contexto.cs" />
     <Compile Include="Negocio\Funcoes.cs" />
     <Compile Include="Negocio\NotaXml.cs" />
     <Compile Include="Program.cs" />

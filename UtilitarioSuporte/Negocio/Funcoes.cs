@@ -145,7 +145,7 @@ namespace UtilitarioSuporte.Negocio
             }
             catch
             {
-                MessageBox.Show("Não foi possivel estabelecer uma conexão, por favor, verifique as informações de Conexão.");
+                
                 return "";
             }
         }

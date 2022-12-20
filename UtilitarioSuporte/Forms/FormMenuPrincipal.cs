@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FontAwesome.Sharp;
 using UtilitarioSuporte.Forms;
 using UtilitarioSuporte.Negocio;
 
@@ -29,10 +22,9 @@ namespace UtilitarioSuporte
         }
         private void VerificacaoInicial()
         {
-            bool ativo = false;
 
             if (File.Exists(Environment.CurrentDirectory + @"\conexao.txt"))
-            {          
+            {
                 return;
             }
             else
@@ -41,7 +33,7 @@ namespace UtilitarioSuporte
             }
         }
         private void DesignCustomizado()
-        {          
+        {
             panelSubMenuXml.Visible = false;
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
@@ -55,7 +47,7 @@ namespace UtilitarioSuporte
         }
         private void EsconderSubMenu()
         {
-            if(panelSubMenuXml.Visible = true)
+            if (panelSubMenuXml.Visible == true)
             {
                 panelSubMenuXml.Visible = false;
             }
@@ -95,7 +87,7 @@ namespace UtilitarioSuporte
                 currentBtn.ImageAlign = ContentAlignment.MiddleCenter;
                 // Borda do Botão
                 leftBorderBtn.BackColor = color;
-                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);           
+                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
                 // Icone do formulario Filho
@@ -108,7 +100,7 @@ namespace UtilitarioSuporte
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(41, 58, 76) ;
+                currentBtn.BackColor = Color.FromArgb(41, 58, 76);
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
@@ -118,7 +110,7 @@ namespace UtilitarioSuporte
         }
         public bool OpenChildForm(Form childForm)
         {
-            if(currentChildForm != null)
+            if (currentChildForm != null)
             {
                 //open only form
                 currentChildForm.Close();
@@ -204,7 +196,7 @@ namespace UtilitarioSuporte
         }
         private void btnMaximize_Click(object sender, EventArgs e)
         {
-            if(WindowState == FormWindowState.Normal)
+            if (WindowState == FormWindowState.Normal)
                 WindowState = FormWindowState.Maximized;
             else
                 WindowState = FormWindowState.Normal;
@@ -220,7 +212,7 @@ namespace UtilitarioSuporte
         }
         private void btnFechar_MouseLeave(object sender, EventArgs e)
         {
-            btnFechar.BackColor= Color.FromArgb(41, 58, 76);
+            btnFechar.BackColor = Color.FromArgb(41, 58, 76);
         }
         private void btnFechar_Click(object sender, EventArgs e)
         {

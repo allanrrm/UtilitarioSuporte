@@ -29,28 +29,29 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelDadosServidor = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.lblUsuarioBD_Retaguarda = new System.Windows.Forms.Label();
-            this.lblSenhaBD_Retaguarda = new System.Windows.Forms.Label();
-            this.btnConectarBD = new System.Windows.Forms.Button();
-            this.tbxBdSenha = new System.Windows.Forms.TextBox();
-            this.tbxBdIP = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.tbxBdUsuario = new System.Windows.Forms.TextBox();
-            this.tbxBdPorta = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tbxCaminhoBaseDados = new System.Windows.Forms.TextBox();
             this.tbxBdNomeBase = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblLocalBD_Retaguarda = new System.Windows.Forms.Label();
             this.tbxCaminhoPSQL = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panelDadosServidor = new System.Windows.Forms.Panel();
+            this.btnConectarBD = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lblUsuarioBD_Retaguarda = new System.Windows.Forms.Label();
+            this.lblSenhaBD_Retaguarda = new System.Windows.Forms.Label();
+            this.tbxBdSenha = new System.Windows.Forms.TextBox();
+            this.tbxBdIP = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.tbxBdUsuario = new System.Windows.Forms.TextBox();
+            this.tbxBdPorta = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panelDadosServidor.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panelDadosServidor.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,33 +64,13 @@
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 0;
             // 
-            // panelDadosServidor
-            // 
-            this.panelDadosServidor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDadosServidor.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelDadosServidor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelDadosServidor.Controls.Add(this.btnConectarBD);
-            this.panelDadosServidor.Controls.Add(this.label1);
-            this.panelDadosServidor.Controls.Add(this.label24);
-            this.panelDadosServidor.Controls.Add(this.lblUsuarioBD_Retaguarda);
-            this.panelDadosServidor.Controls.Add(this.lblSenhaBD_Retaguarda);
-            this.panelDadosServidor.Controls.Add(this.tbxBdSenha);
-            this.panelDadosServidor.Controls.Add(this.tbxBdIP);
-            this.panelDadosServidor.Controls.Add(this.label23);
-            this.panelDadosServidor.Controls.Add(this.tbxBdUsuario);
-            this.panelDadosServidor.Controls.Add(this.tbxBdPorta);
-            this.panelDadosServidor.Location = new System.Drawing.Point(13, 12);
-            this.panelDadosServidor.Name = "panelDadosServidor";
-            this.panelDadosServidor.Size = new System.Drawing.Size(776, 150);
-            this.panelDadosServidor.TabIndex = 0;
-            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.tbxCaminhoBaseDados);
             this.panel3.Controls.Add(this.tbxBdNomeBase);
@@ -102,98 +83,20 @@
             this.panel3.Size = new System.Drawing.Size(776, 252);
             this.panel3.TabIndex = 0;
             // 
-            // label24
+            // button1
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(12, 47);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(77, 13);
-            this.label24.TabIndex = 11;
-            this.label24.Text = "IP do Servidor:";
-            // 
-            // lblUsuarioBD_Retaguarda
-            // 
-            this.lblUsuarioBD_Retaguarda.AutoSize = true;
-            this.lblUsuarioBD_Retaguarda.Location = new System.Drawing.Point(219, 47);
-            this.lblUsuarioBD_Retaguarda.Name = "lblUsuarioBD_Retaguarda";
-            this.lblUsuarioBD_Retaguarda.Size = new System.Drawing.Size(46, 13);
-            this.lblUsuarioBD_Retaguarda.TabIndex = 15;
-            this.lblUsuarioBD_Retaguarda.Text = "Usuário:";
-            // 
-            // lblSenhaBD_Retaguarda
-            // 
-            this.lblSenhaBD_Retaguarda.AutoSize = true;
-            this.lblSenhaBD_Retaguarda.Location = new System.Drawing.Point(320, 47);
-            this.lblSenhaBD_Retaguarda.Name = "lblSenhaBD_Retaguarda";
-            this.lblSenhaBD_Retaguarda.Size = new System.Drawing.Size(41, 13);
-            this.lblSenhaBD_Retaguarda.TabIndex = 17;
-            this.lblSenhaBD_Retaguarda.Text = "Senha:";
-            // 
-            // btnConectarBD
-            // 
-            this.btnConectarBD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConectarBD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
-            this.btnConectarBD.FlatAppearance.BorderSize = 0;
-            this.btnConectarBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConectarBD.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnConectarBD.Location = new System.Drawing.Point(3, 122);
-            this.btnConectarBD.Name = "btnConectarBD";
-            this.btnConectarBD.Size = new System.Drawing.Size(768, 23);
-            this.btnConectarBD.TabIndex = 19;
-            this.btnConectarBD.Text = "Conectar";
-            this.btnConectarBD.UseVisualStyleBackColor = false;
-            // 
-            // tbxBdSenha
-            // 
-            this.tbxBdSenha.Location = new System.Drawing.Point(323, 63);
-            this.tbxBdSenha.Name = "tbxBdSenha";
-            this.tbxBdSenha.PasswordChar = '#';
-            this.tbxBdSenha.Size = new System.Drawing.Size(93, 20);
-            this.tbxBdSenha.TabIndex = 18;
-            this.tbxBdSenha.Text = "autocom2017@";
-            // 
-            // tbxBdIP
-            // 
-            this.tbxBdIP.Location = new System.Drawing.Point(15, 63);
-            this.tbxBdIP.Name = "tbxBdIP";
-            this.tbxBdIP.Size = new System.Drawing.Size(80, 20);
-            this.tbxBdIP.TabIndex = 12;
-            this.tbxBdIP.Text = "127.0.0.1";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(130, 47);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(32, 13);
-            this.label23.TabIndex = 13;
-            this.label23.Text = "Porta";
-            // 
-            // tbxBdUsuario
-            // 
-            this.tbxBdUsuario.Location = new System.Drawing.Point(222, 63);
-            this.tbxBdUsuario.Name = "tbxBdUsuario";
-            this.tbxBdUsuario.Size = new System.Drawing.Size(63, 20);
-            this.tbxBdUsuario.TabIndex = 16;
-            this.tbxBdUsuario.Text = "postgres";
-            // 
-            // tbxBdPorta
-            // 
-            this.tbxBdPorta.Location = new System.Drawing.Point(133, 63);
-            this.tbxBdPorta.Name = "tbxBdPorta";
-            this.tbxBdPorta.Size = new System.Drawing.Size(48, 20);
-            this.tbxBdPorta.TabIndex = 14;
-            this.tbxBdPorta.Text = "5432";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Dados do Servidor";
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.Location = new System.Drawing.Point(3, 224);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(768, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Conectar";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // tbxCaminhoBaseDados
             // 
@@ -259,20 +162,131 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Caminho do Psql";
             // 
-            // button1
+            // panelDadosServidor
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelDadosServidor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(3, 224);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(768, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Conectar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.panelDadosServidor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelDadosServidor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDadosServidor.Controls.Add(this.btnConectarBD);
+            this.panelDadosServidor.Controls.Add(this.label1);
+            this.panelDadosServidor.Controls.Add(this.label24);
+            this.panelDadosServidor.Controls.Add(this.lblUsuarioBD_Retaguarda);
+            this.panelDadosServidor.Controls.Add(this.lblSenhaBD_Retaguarda);
+            this.panelDadosServidor.Controls.Add(this.tbxBdSenha);
+            this.panelDadosServidor.Controls.Add(this.tbxBdIP);
+            this.panelDadosServidor.Controls.Add(this.label23);
+            this.panelDadosServidor.Controls.Add(this.tbxBdUsuario);
+            this.panelDadosServidor.Controls.Add(this.tbxBdPorta);
+            this.panelDadosServidor.Location = new System.Drawing.Point(13, 12);
+            this.panelDadosServidor.Name = "panelDadosServidor";
+            this.panelDadosServidor.Size = new System.Drawing.Size(776, 150);
+            this.panelDadosServidor.TabIndex = 0;
+            // 
+            // btnConectarBD
+            // 
+            this.btnConectarBD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConectarBD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnConectarBD.FlatAppearance.BorderSize = 0;
+            this.btnConectarBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConectarBD.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnConectarBD.Location = new System.Drawing.Point(3, 122);
+            this.btnConectarBD.Name = "btnConectarBD";
+            this.btnConectarBD.Size = new System.Drawing.Size(768, 23);
+            this.btnConectarBD.TabIndex = 19;
+            this.btnConectarBD.Text = "Conectar";
+            this.btnConectarBD.UseVisualStyleBackColor = false;
+            this.btnConectarBD.Click += new System.EventHandler(this.btnConectarBD_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Dados do Servidor";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(12, 47);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(77, 13);
+            this.label24.TabIndex = 11;
+            this.label24.Text = "IP do Servidor:";
+            // 
+            // lblUsuarioBD_Retaguarda
+            // 
+            this.lblUsuarioBD_Retaguarda.AutoSize = true;
+            this.lblUsuarioBD_Retaguarda.Location = new System.Drawing.Point(219, 47);
+            this.lblUsuarioBD_Retaguarda.Name = "lblUsuarioBD_Retaguarda";
+            this.lblUsuarioBD_Retaguarda.Size = new System.Drawing.Size(46, 13);
+            this.lblUsuarioBD_Retaguarda.TabIndex = 15;
+            this.lblUsuarioBD_Retaguarda.Text = "Usuário:";
+            // 
+            // lblSenhaBD_Retaguarda
+            // 
+            this.lblSenhaBD_Retaguarda.AutoSize = true;
+            this.lblSenhaBD_Retaguarda.Location = new System.Drawing.Point(320, 47);
+            this.lblSenhaBD_Retaguarda.Name = "lblSenhaBD_Retaguarda";
+            this.lblSenhaBD_Retaguarda.Size = new System.Drawing.Size(41, 13);
+            this.lblSenhaBD_Retaguarda.TabIndex = 17;
+            this.lblSenhaBD_Retaguarda.Text = "Senha:";
+            // 
+            // tbxBdSenha
+            // 
+            this.tbxBdSenha.Location = new System.Drawing.Point(323, 63);
+            this.tbxBdSenha.Name = "tbxBdSenha";
+            this.tbxBdSenha.PasswordChar = '#';
+            this.tbxBdSenha.Size = new System.Drawing.Size(93, 20);
+            this.tbxBdSenha.TabIndex = 18;
+            this.tbxBdSenha.Text = "autocom2017@";
+            // 
+            // tbxBdIP
+            // 
+            this.tbxBdIP.Location = new System.Drawing.Point(15, 63);
+            this.tbxBdIP.Name = "tbxBdIP";
+            this.tbxBdIP.Size = new System.Drawing.Size(80, 20);
+            this.tbxBdIP.TabIndex = 12;
+            this.tbxBdIP.Text = "127.0.0.1";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(130, 47);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(32, 13);
+            this.label23.TabIndex = 13;
+            this.label23.Text = "Porta";
+            // 
+            // tbxBdUsuario
+            // 
+            this.tbxBdUsuario.Location = new System.Drawing.Point(222, 63);
+            this.tbxBdUsuario.Name = "tbxBdUsuario";
+            this.tbxBdUsuario.Size = new System.Drawing.Size(63, 20);
+            this.tbxBdUsuario.TabIndex = 16;
+            this.tbxBdUsuario.Text = "postgres";
+            // 
+            // tbxBdPorta
+            // 
+            this.tbxBdPorta.Location = new System.Drawing.Point(133, 63);
+            this.tbxBdPorta.Name = "tbxBdPorta";
+            this.tbxBdPorta.Size = new System.Drawing.Size(48, 20);
+            this.tbxBdPorta.TabIndex = 14;
+            this.tbxBdPorta.Text = "5432";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Dados do Postgres";
             // 
             // FormRecuperarBase
             // 
@@ -283,10 +297,10 @@
             this.Name = "FormRecuperarBase";
             this.Text = "FormRecuperarBase";
             this.panel1.ResumeLayout(false);
-            this.panelDadosServidor.ResumeLayout(false);
-            this.panelDadosServidor.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panelDadosServidor.ResumeLayout(false);
+            this.panelDadosServidor.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -313,5 +327,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox tbxBdUsuario;
         private System.Windows.Forms.TextBox tbxBdPorta;
+        private System.Windows.Forms.Label label4;
     }
 }

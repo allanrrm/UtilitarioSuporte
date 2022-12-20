@@ -13,7 +13,7 @@ using UtilitarioSuporte.DataAccess;
 
 namespace UtilitarioSuporte.Negocio
 {
-    public class Negocio
+    public class Contexto
     {    
         public static NotaXml PreencherFormulario(DataTable dataTableNotas, int tipo)
         {
@@ -182,7 +182,7 @@ namespace UtilitarioSuporte.Negocio
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
 
             }
@@ -286,6 +286,15 @@ namespace UtilitarioSuporte.Negocio
             {
 
             }
+        }
+        public static DataTable ConexaoBancoDados(string servidor, string porta, string baseDados, string usuario, string senha)
+        {
+            DataTable dataTableEmpresa = Conexao.ConectarBancoDados(servidor, porta, baseDados, usuario, senha);
+            return dataTableEmpresa;
+        }
+        public static void ConexaoBancoCriarConfiguracao(string servidor, string porta, string baseDados, string usuario, string senha, int idempresa)
+        {
+
         }
     }
 }

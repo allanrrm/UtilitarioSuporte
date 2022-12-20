@@ -33,9 +33,13 @@ namespace UtilitarioSuporte.Forms
             DataTable notasDataTableEntrada = Conexao.PreencherFormularioDataTable(mes, ano, 0);
             DataTable notasDataTableSaida = Conexao.PreencherFormularioDataTable(mes, ano, 1);
             DataTable notasDataTableNFCe = Conexao.PreencherFormularioDataTable(mes, ano, 2);
-            notaXmlEntrada = Negocio.Negocio.PreencherFormulario(notasDataTableEntrada, 0);
-            notaXmlSaida = Negocio.Negocio.PreencherFormulario(notasDataTableSaida, 1);
-            notaXmlNFCe = Negocio.Negocio.PreencherFormulario(notasDataTableNFCe, 2);
+            if (notasDataTableEntrada == null) //Caso haja erro 
+            {
+                return;
+            }
+            notaXmlEntrada = Negocio.Contexto.PreencherFormulario(notasDataTableEntrada, 0);
+            notaXmlSaida = Negocio.Contexto.PreencherFormulario(notasDataTableSaida, 1);
+            notaXmlNFCe = Negocio.Contexto.PreencherFormulario(notasDataTableNFCe, 2);
 
             // Nota Fiscal Entrada
             lblNumeroNotasNFeEntrada.Text = notaXmlEntrada.NumeroNotas.ToString();
