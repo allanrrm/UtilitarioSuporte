@@ -26,7 +26,7 @@ namespace UtilitarioSuporte.Forms
             DataTable notasDataTable = Conexao.PreencherFormularioDataTable(mes, ano, tipo);
             if (notasDataTable == null) //Caso não seja feita a conexão, esse DataTable terá o valor de nulo e retornará o formulario em branco
             {
-                MessageBox.Show("Não foi possivel estabelecer uma conexão, por favor, verifique as informações de Conexão.");
+                Funcoes.MessagemRetornoConexao(false);
                 return;
             }
             notaXml = Negocio.Contexto.PreencherFormulario(notasDataTable, tipo);

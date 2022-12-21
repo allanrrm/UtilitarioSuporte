@@ -30,7 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnRecuperarBase = new System.Windows.Forms.Button();
             this.tbxCaminhoBaseDados = new System.Windows.Forms.TextBox();
             this.tbxBdNomeBase = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,7 +49,8 @@
             this.label23 = new System.Windows.Forms.Label();
             this.tbxBdUsuario = new System.Windows.Forms.TextBox();
             this.tbxBdPorta = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btnFolderPsql = new FontAwesome.Sharp.IconButton();
+            this.btnFolderCaminhoBase = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelDadosServidor.SuspendLayout();
@@ -70,8 +72,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnFolderCaminhoBase);
+            this.panel3.Controls.Add(this.btnFolderPsql);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnRecuperarBase);
             this.panel3.Controls.Add(this.tbxCaminhoBaseDados);
             this.panel3.Controls.Add(this.tbxBdNomeBase);
             this.panel3.Controls.Add(this.label2);
@@ -83,20 +87,33 @@
             this.panel3.Size = new System.Drawing.Size(776, 252);
             this.panel3.TabIndex = 0;
             // 
-            // button1
+            // label4
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Dados do Postgres";
+            // 
+            // btnRecuperarBase
+            // 
+            this.btnRecuperarBase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(3, 224);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(768, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Conectar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRecuperarBase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnRecuperarBase.Enabled = false;
+            this.btnRecuperarBase.FlatAppearance.BorderSize = 0;
+            this.btnRecuperarBase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecuperarBase.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnRecuperarBase.Location = new System.Drawing.Point(3, 224);
+            this.btnRecuperarBase.Name = "btnRecuperarBase";
+            this.btnRecuperarBase.Size = new System.Drawing.Size(768, 23);
+            this.btnRecuperarBase.TabIndex = 20;
+            this.btnRecuperarBase.Text = "Conectar";
+            this.btnRecuperarBase.UseVisualStyleBackColor = false;
+            this.btnRecuperarBase.Click += new System.EventHandler(this.btnRecuperarBase_Click);
             // 
             // tbxCaminhoBaseDados
             // 
@@ -277,16 +294,36 @@
             this.tbxBdPorta.TabIndex = 14;
             this.tbxBdPorta.Text = "5432";
             // 
-            // label4
+            // btnFolderPsql
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 13);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Dados do Postgres";
+            this.btnFolderPsql.BackColor = System.Drawing.SystemColors.Window;
+            this.btnFolderPsql.FlatAppearance.BorderSize = 0;
+            this.btnFolderPsql.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFolderPsql.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
+            this.btnFolderPsql.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnFolderPsql.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFolderPsql.IconSize = 24;
+            this.btnFolderPsql.Location = new System.Drawing.Point(739, 118);
+            this.btnFolderPsql.Name = "btnFolderPsql";
+            this.btnFolderPsql.Size = new System.Drawing.Size(31, 23);
+            this.btnFolderPsql.TabIndex = 22;
+            this.btnFolderPsql.UseVisualStyleBackColor = false;
+            this.btnFolderPsql.Click += new System.EventHandler(this.btnFolderPsql_Click);
+            // 
+            // btnFolderCaminhoBase
+            // 
+            this.btnFolderCaminhoBase.FlatAppearance.BorderSize = 0;
+            this.btnFolderCaminhoBase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFolderCaminhoBase.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
+            this.btnFolderCaminhoBase.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.btnFolderCaminhoBase.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFolderCaminhoBase.IconSize = 24;
+            this.btnFolderCaminhoBase.Location = new System.Drawing.Point(739, 171);
+            this.btnFolderCaminhoBase.Name = "btnFolderCaminhoBase";
+            this.btnFolderCaminhoBase.Size = new System.Drawing.Size(31, 23);
+            this.btnFolderCaminhoBase.TabIndex = 23;
+            this.btnFolderCaminhoBase.UseVisualStyleBackColor = true;
+            this.btnFolderCaminhoBase.Click += new System.EventHandler(this.btnFolderCaminhoBase_Click);
             // 
             // FormRecuperarBase
             // 
@@ -309,7 +346,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRecuperarBase;
         private System.Windows.Forms.TextBox tbxCaminhoBaseDados;
         private System.Windows.Forms.TextBox tbxBdNomeBase;
         private System.Windows.Forms.Label label2;
@@ -328,5 +365,7 @@
         private System.Windows.Forms.TextBox tbxBdUsuario;
         private System.Windows.Forms.TextBox tbxBdPorta;
         private System.Windows.Forms.Label label4;
+        private FontAwesome.Sharp.IconButton btnFolderCaminhoBase;
+        private FontAwesome.Sharp.IconButton btnFolderPsql;
     }
 }

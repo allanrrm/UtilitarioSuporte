@@ -4,10 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Windows.Forms;
 using System.Xml;
 using UtilitarioSuporte.DataAccess;
 
@@ -35,6 +36,45 @@ namespace UtilitarioSuporte.Negocio
             ExtrairBase(dataTableNotas, tipo, mes, ano);
             ExtrairBaseNotasCanceladas(dataTableNotas, tipo, mes, ano);
         }
+
+        public static void RecuperarBaseDados(string servidor, string porta, string usuario, string senha, string arquivoBaseDados, string caminhoPSQL, string nomeBase)
+        {
+            if (Path.GetExtension(arquivoBaseDados) == ".zip")
+            {
+                string caminhoExtracaoBaseDados = Environment.CurrentDirectory;
+                caminhoExtracaoBaseDados = Path.GetFullPath(caminhoExtracaoBaseDados);
+                try
+                {
+                    using (ZipArchive archive = ZipFile.OpenRead(arquivoBaseDados))
+                    {
+                        if (Path.GetExtension(archive.Entries[0].ToString()) != ".sql")
+                        {
+                            MessageBox.Show("Não foi possivel extrair o banco de dados");
+                            return;
+                        }
+                        ZipFile.ExtractToDirectory(arquivoBaseDados, Environment.CurrentDirectory);
+                        arquivoBaseDados = Environment.CurrentDirectory + @"\" + archive.Entries[0].ToString();
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Não foi possivel extrair o banco de dados");
+                    return;
+                }
+            
+            }
+            string conexao = Funcoes.MontaStringConexao(servidor, porta, usuario, senha);
+            bool retorno = Conexao.Restore(caminhoPSQL,arquivoBaseDados,usuario,nomeBase,senha, conexao);
+            if (retorno == false)
+            {
+                MessageBox.Show("Base já existente ou campo em branco, Digite o nome da base novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                File.Delete(arquivoBaseDados);
+            }
+
+            MessageBox.Show("Base recuperada com sucesso.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            File.Delete(arquivoBaseDados);
+        }
+
         public static DataTable CapturarInformacoesXml(int tipo, string mes)
         {
 
@@ -288,13 +328,43 @@ namespace UtilitarioSuporte.Negocio
             }
         }
         public static DataTable ConexaoBancoDados(string servidor, string porta, string baseDados, string usuario, string senha)
-        {
-            DataTable dataTableEmpresa = Conexao.ConectarBancoDados(servidor, porta, baseDados, usuario, senha);
-            return dataTableEmpresa;
-        }
-        public static void ConexaoBancoCriarConfiguracao(string servidor, string porta, string baseDados, string usuario, string senha, int idempresa)
-        {
+        {         
+            string conexao = Funcoes.MontaStringConexao(servidor, porta, baseDados, usuario, senha);
+            bool retorno = Conexao.TestarConexao(conexao);
+            if(retorno == true)
+            {
+                DataTable dataTableEmpresa = Conexao.ConectarBancoDados(conexao);
+                Funcoes.MessagemRetornoConexao(retorno);
+                return dataTableEmpresa;
+            }
+            else
+            {
+                Funcoes.MessagemRetornoConexao(retorno);
+                return null;
+            }
 
+        }
+        public static bool ConexaoBancoDados(string servidor, string porta, string usuario, string senha) //Método Sobreescrito para Conexão sem base criada
+        {
+            string conexao = Funcoes.MontaStringConexao(servidor, porta, "postgres" ,usuario, senha);
+            bool retorno = Conexao.TestarConexao(conexao);
+            if( retorno == true)
+            {
+                Funcoes.MessagemRetornoConexao(retorno);
+                return retorno;
+            }
+            else
+            {
+                Funcoes.MessagemRetornoConexao(retorno);
+                return retorno;
+            }
+            
+
+        }
+        public static void ConexaoBancoCriarConfiguracao(string servidor, string porta, string baseDados, string usuario, string senha, int idEmpresa)
+        {
+            string conexao = Conexao.SalvarConfiguracaoBaseDados(servidor, porta, baseDados, usuario, senha, idEmpresa);
+            Funcoes.CriptografarConexaoBanco(conexao, idEmpresa);
         }
     }
 }

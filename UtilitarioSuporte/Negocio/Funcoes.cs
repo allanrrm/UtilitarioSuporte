@@ -60,6 +60,17 @@ namespace UtilitarioSuporte.Negocio
                 .Append($"Timeout={5};"); //retirar
             return StringConexao.ToString();
         }
+        public static string MontaStringConexao(string servidor, string porta, string usuario, string senha)
+        {
+            StringBuilder StringConexao = new StringBuilder();
+            StringConexao.Append($"User Id={usuario};")
+                .Append($"Password={senha};")
+                .Append($"Server={servidor};")
+                .Append($"Port={porta};")
+                .Append($"Enlist=true;")
+                .Append($"Timeout={5};"); //retirar
+            return StringConexao.ToString();
+        }
         public static void CriptografarConexaoBanco(string conexao, int idEmpresa)
         {
             try
@@ -376,6 +387,53 @@ namespace UtilitarioSuporte.Negocio
             //(int)System.Drawing.FontStyle.Regular);
 
             doc.Close();
+        }
+        public static void MessagemRetornoConexao(bool retorno)
+        {
+            if (retorno == true)
+            {
+                MessageBox.Show("Conexao efetuada com sucesso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Não foi possivel estabelecer uma conexão, por favor, verifique as informações e tente novamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+        }
+        public static string SelecionarPasta()
+        {
+            string resultado;
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            folderBrowserDialog.Description = "Selecione a Pasta";
+            folderBrowserDialog.RootFolder = Environment.SpecialFolder.Desktop;
+            folderBrowserDialog.ShowNewFolderButton = true;
+            DialogResult dialogResult = folderBrowserDialog.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                resultado = folderBrowserDialog.SelectedPath;
+            }
+            else
+            {
+                resultado = "";
+            }
+            return resultado;
+        }
+        public static string SelecionarArquivo()
+        {
+            string resultado;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Selecione o arquivo de backup";
+            openFileDialog.Filter = "Arquivo Sql (*.sql;*.zip;.rar;.7zip)|*.sql;*.zip";
+            DialogResult dialogResult = openFileDialog.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                resultado = openFileDialog.FileName;
+            }
+            else
+            {
+                resultado = "";
+            }
+            return resultado;
         }
     }
 }

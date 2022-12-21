@@ -2,12 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
-using System.Windows;
-using System.Xml;
+using System.Windows.Forms;
 using UtilitarioSuporte.DataAccess;
 using UtilitarioSuporte.Negocio;
-using static UtilitarioSuporte.Recursos.MessageBoxPersonalizada;
 
 namespace DataAccess
 {
@@ -32,22 +31,19 @@ namespace DataAccess
             return conn;
 
         }
-        public static NpgsqlConnection CriarConexaoBase(string stringConexao)
+        public static bool TestarConexao(string stringConexao)
         {
-
-            var conn = new NpgsqlConnection(stringConexao);
+            NpgsqlConnection conn = new NpgsqlConnection(stringConexao);
             try
             {
                 conn.Open();
-                MessageBox.Show("Conexão efetuada com sucesso", "Aviso", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            catch (Exception)
-            {
                 conn.Close();
-                MessageBox.Show("Não foi possivel estabelecer uma conexao com o servidor, verifique as informações e tente novamente.", "Aviso", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return true;
             }
-            return conn;
-
+            catch (NpgsqlException)
+            {
+                return false;
+            }
         }
         public static DataTable ExecReader(NpgsqlCommand cmd, NpgsqlConnection conn)
         {
@@ -64,11 +60,12 @@ namespace DataAccess
                 return null; 
             }
         }
-        public static DataTable ConectarBancoDados(string servidor, string porta, string baseDados, string usuario, string senha)
+        public static DataTable ConectarBancoDados(string conexao)
         {
-            string conexao = Funcoes.MontaStringConexao(servidor, porta, baseDados, usuario, senha);
-            NpgsqlConnection conn = Conexao.CriarConexaoBase(conexao);
-            DataTable empresas = ConsultarEmpresas(conn);
+            NpgsqlConnection conn;
+            DataTable empresas;
+            conn = Conexao.ConexaoBase(conexao);
+            empresas = ConsultarEmpresas(conn);
             return empresas;
         }
         public static DataTable ConsultarEmpresas(NpgsqlConnection conn)
@@ -77,10 +74,10 @@ namespace DataAccess
             DataTable dtEmpresas = Conexao.ExecReader(empresas, conn);
             return dtEmpresas;
         }
-        public static void SalvarConfiguracaoBaseDados(string servidor, string porta, string baseDados, string usuario, string senha, int idEmpresa)
+        public static string SalvarConfiguracaoBaseDados(string servidor, string porta, string baseDados, string usuario, string senha, int idEmpresa)
         {
             string conexao = Funcoes.MontaStringConexao(servidor, porta, baseDados, usuario, senha);
-            Funcoes.CriptografarConexaoBanco(conexao, idEmpresa);
+            return conexao;
         }
         public static DataTable PreencherFormularioDataTable(string mes, string ano, int tipo)
         {
@@ -101,6 +98,52 @@ namespace DataAccess
 
 
         }
+        public static bool Restore(string executavelPsql, string caminhoBaseDados, string usuario, string bancoDados, string senha, string stringConexao)
+        {
+            string argumentoRecuperacao = $"-U {usuario} -d {bancoDados} -f \"{caminhoBaseDados}\"";
+            Environment.SetEnvironmentVariable("PGPASSWORD", senha);
+            string exe = executavelPsql + @"\psql";
+            string arg = argumentoRecuperacao;
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = exe;
+            startInfo.Arguments = arg;
+            try
+            {
+                bool nomeTeste = CriarDataBase(stringConexao, bancoDados);
+                if (nomeTeste == true)
+                {
+                    Process exeProcess = Process.Start(startInfo);
+                    exeProcess.WaitForExit();
+                    return true;
+                }
+                else
+                {                                      
+                    return false;
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show(@"Selecione a pasta do PSQL Corretamente ex:C\programfiles(x86)\Postgres\x.x\bin", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+        }
+        public static bool CriarDataBase(string stringConexao, string baseDados)
+        {
+            NpgsqlConnection conn = new NpgsqlConnection(stringConexao);
+            try
+            {
+                conn.Open();
+                NpgsqlCommand command = new NpgsqlCommand($"CREATE DATABASE {baseDados}", conn);
+                command.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
-    }
+}
 
