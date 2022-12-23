@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
+using UtilitarioSuporte.Negocio;
 
 namespace UtilitarioSuporte.Forms
 {
@@ -7,6 +9,12 @@ namespace UtilitarioSuporte.Forms
         public FormExterno()
         {
             InitializeComponent();
+            ExecutarConsultaEmpresa();
+        }
+
+        private void ExecutarConsultaEmpresa()
+        {
+            Contexto.ConsultaEmpresa();
         }
     }
 }

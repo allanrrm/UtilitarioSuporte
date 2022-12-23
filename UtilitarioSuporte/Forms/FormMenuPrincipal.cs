@@ -115,6 +115,7 @@ namespace UtilitarioSuporte
                 //open only form
                 currentChildForm.Close();
             }
+            pictureHome.Enabled = true;
             currentChildForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -181,8 +182,16 @@ namespace UtilitarioSuporte
         }
         private void pictureHome_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
-            Reset();
+            try
+            {
+                EsconderSubMenu();
+                currentChildForm.Close();
+                Reset();
+            }
+            catch
+            {
+                Reset();
+            }
         }
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

@@ -23,12 +23,14 @@ namespace UtilitarioSuporte.Forms
 
         private void ExecutarFiltroNotas(string mes, string ano, int tipo)
         {
-            DataTable notasDataTable = Conexao.PreencherFormularioDataTable(mes, ano, tipo);
+          
+            DataTable notasDataTable = Contexto.PreencherFormularioDataTable(mes, ano, tipo);
             if (notasDataTable == null) //Caso não seja feita a conexão, esse DataTable terá o valor de nulo e retornará o formulario em branco
             {
-                Funcoes.MessagemRetornoConexao(false);
+                Funcoes.MessagemRetornoConexao(false);               
                 return;
             }
+            dataGridViewXml.Visible = true;
             notaXml = Negocio.Contexto.PreencherFormulario(notasDataTable, tipo);
             notasDataTable.Columns.Remove("xml");
             if (tipo == 2)

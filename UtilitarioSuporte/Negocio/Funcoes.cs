@@ -396,7 +396,7 @@ namespace UtilitarioSuporte.Negocio
             }
             else
             {
-                MessageBox.Show("Não foi possivel estabelecer uma conexão, por favor, verifique as informações e tente novamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Não foi possivel estabelecer comunicação com o banco de Dados, por favor, verifique as informações de conexao e tente novamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }

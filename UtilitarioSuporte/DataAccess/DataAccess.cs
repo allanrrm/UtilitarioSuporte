@@ -79,7 +79,7 @@ namespace DataAccess
             string conexao = Funcoes.MontaStringConexao(servidor, porta, baseDados, usuario, senha);
             return conexao;
         }
-        public static DataTable PreencherFormularioDataTable(string mes, string ano, int tipo)
+        public static DataTable PreencherDataTable(string mes, string ano, int tipo)
         {
             try
             {
@@ -93,10 +93,13 @@ namespace DataAccess
             catch
             {
                 return null;
-            }
-            
-
-
+            }   
+        }
+        public static void ConsultaEmpresaBancoDados(string dadosBancoDados, string idEmpresa)
+        {
+            NpgsqlConnection conn = Conexao.ConexaoBase(dadosBancoDados);
+            NpgsqlCommand comando;
+            comando = ComandosSQL.CmdConsultarEmpresa(conn, idEmpresa);
         }
         public static bool Restore(string executavelPsql, string caminhoBaseDados, string usuario, string bancoDados, string senha, string stringConexao)
         {

@@ -330,6 +330,7 @@
             // pictureHome
             // 
             this.pictureHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(58)))), ((int)(((byte)(76)))));
+            this.pictureHome.Enabled = false;
             this.pictureHome.ForeColor = System.Drawing.Color.Gainsboro;
             this.pictureHome.IconChar = FontAwesome.Sharp.IconChar.ScrewdriverWrench;
             this.pictureHome.IconColor = System.Drawing.Color.Gainsboro;
@@ -377,6 +378,7 @@
             // 
             // iconCurrentChildForm
             // 
+            this.iconCurrentChildForm.Enabled = false;
             this.iconCurrentChildForm.FlatAppearance.BorderSize = 0;
             this.iconCurrentChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;

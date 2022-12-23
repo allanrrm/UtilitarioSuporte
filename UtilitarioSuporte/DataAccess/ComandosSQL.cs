@@ -75,5 +75,10 @@ namespace UtilitarioSuporte.DataAccess
             return notas;
 
         }
+
+        public static NpgsqlCommand CmdConsultarEmpresa(NpgsqlConnection conn, string idEmpresa)
+        {
+            return new NpgsqlCommand();
+        }
     }
 }

@@ -30,9 +30,9 @@ namespace UtilitarioSuporte.Forms
 
         public void ValorTotalizacao(string mes, string ano)
         {
-            DataTable notasDataTableEntrada = Conexao.PreencherFormularioDataTable(mes, ano, 0);
-            DataTable notasDataTableSaida = Conexao.PreencherFormularioDataTable(mes, ano, 1);
-            DataTable notasDataTableNFCe = Conexao.PreencherFormularioDataTable(mes, ano, 2);
+            DataTable notasDataTableEntrada = Contexto.PreencherFormularioDataTable(mes, ano, 0);
+            DataTable notasDataTableSaida = Contexto.PreencherFormularioDataTable(mes, ano, 1);
+            DataTable notasDataTableNFCe = Contexto.PreencherFormularioDataTable(mes, ano, 2);
             if (notasDataTableEntrada == null) //Caso haja erro 
             {
                 return;

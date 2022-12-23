@@ -297,6 +297,7 @@
             // btnFolderPsql
             // 
             this.btnFolderPsql.BackColor = System.Drawing.SystemColors.Window;
+            this.btnFolderPsql.Enabled = false;
             this.btnFolderPsql.FlatAppearance.BorderSize = 0;
             this.btnFolderPsql.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFolderPsql.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
@@ -312,6 +313,7 @@
             // 
             // btnFolderCaminhoBase
             // 
+            this.btnFolderCaminhoBase.Enabled = false;
             this.btnFolderCaminhoBase.FlatAppearance.BorderSize = 0;
             this.btnFolderCaminhoBase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFolderCaminhoBase.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;

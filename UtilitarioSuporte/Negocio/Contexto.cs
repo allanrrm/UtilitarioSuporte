@@ -30,6 +30,13 @@ namespace UtilitarioSuporte.Negocio
             
             return notaXml;
         }
+
+        public static DataTable PreencherFormularioDataTable(string mes, string ano, int tipo)
+        {
+            DataTable dataTable = Conexao.PreencherDataTable(mes, ano, tipo);
+            return dataTable;
+        }
+
         public static void ExtrairNotas(string mes, string ano, int tipo, NotaXml notaXml)
         {
             DataTable dataTableNotas = notaXml.DataTableNotas;
@@ -365,6 +372,12 @@ namespace UtilitarioSuporte.Negocio
         {
             string conexao = Conexao.SalvarConfiguracaoBaseDados(servidor, porta, baseDados, usuario, senha, idEmpresa);
             Funcoes.CriptografarConexaoBanco(conexao, idEmpresa);
+        }
+
+        public static void ConsultaEmpresa()
+        {
+            List<string> informacaoConfiguracao = Funcoes.DescriptografarStringConexao();
+
         }
     }
 }

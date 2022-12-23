@@ -25,6 +25,8 @@ namespace UtilitarioSuporte.Forms
             if(retorno == true)
             {
                 btnRecuperarBase.Enabled = true;
+                btnFolderCaminhoBase.Enabled = true;
+                btnFolderPsql.Enabled = true;
             }
         }
 

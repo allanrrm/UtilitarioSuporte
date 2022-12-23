@@ -128,6 +128,7 @@
             this.dataGridViewXml.Name = "dataGridViewXml";
             this.dataGridViewXml.Size = new System.Drawing.Size(683, 444);
             this.dataGridViewXml.TabIndex = 0;
+            this.dataGridViewXml.Visible = false;
             // 
             // dataGridViewSerie
             // 
